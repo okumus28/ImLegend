@@ -10,6 +10,7 @@ public class CarSelection : MonoBehaviour
 
     private void Start()
     {
+        currentCarIndex = PlayerPrefs.GetInt("CurrentCarIndex");
         SelectedCar(currentCarIndex);
     }
 
@@ -28,5 +29,6 @@ public class CarSelection : MonoBehaviour
     {
         currentCarIndex += _change;
         SelectedCar(currentCarIndex);
+        PlayerPrefs.SetInt("CurrentCarIndex", currentCarIndex);
     }
 }
