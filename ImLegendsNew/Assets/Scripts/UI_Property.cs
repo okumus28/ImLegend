@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UI_Property : MonoBehaviour
 {
-    [Header("Texts")]
+    [Header("Value Texts")]
     [SerializeField] TextMeshProUGUI speedText;
     [SerializeField] TextMeshProUGUI armorText;
     [SerializeField] TextMeshProUGUI fuelTankText;

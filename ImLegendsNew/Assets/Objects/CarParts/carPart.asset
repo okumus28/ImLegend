@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2c09180badd384aac057ebb05d7c92, type: 3}
   m_Name: carPart
   m_EditorClassIdentifier: 
-  partTransform: 2
+  partTransform: 0
   partName: 
   partLevel: 1
   price: 0
   properties:
-    speed: 300
-    armor: 300
-    fuelTank: 100
-    zombieResist: 100
-    monsterModeDuration: 10
-    comboDuration: 10
+    speed: 10
+    armor: 10
+    fuelTank: 10
+    zombieResist: 10
+    monsterDuration: 1
+    comboDuration: 1

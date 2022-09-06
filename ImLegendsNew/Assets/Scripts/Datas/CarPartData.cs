@@ -17,6 +17,5 @@ public class CarPartData : ScriptableObject
 	public string partName;
 	[Range(1, 5)] public int partLevel;
 	public int price;
-	public Properties properties;
-    
+	public Properties properties;    
 }

@@ -7,7 +7,6 @@ public class CarSelection : MonoBehaviour
     [SerializeField] Button nextButton;
 
     int currentCarIndex;
-
     private void Start()
     {
         currentCarIndex = PlayerPrefs.GetInt("CurrentCarIndex");
@@ -16,13 +15,17 @@ public class CarSelection : MonoBehaviour
 
     void SelectedCar(int _index)
     {
-        previousButton.interactable = _index != 0;
-        nextButton.interactable = _index != transform.childCount - 1;
-
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(i == _index);
         }
+
+        if (previousButton == null)
+            return;
+
+        previousButton.interactable = _index != 0;
+        nextButton.interactable = _index != transform.childCount - 1;
+
     }
 
     public void ChangeCar(int _change)
