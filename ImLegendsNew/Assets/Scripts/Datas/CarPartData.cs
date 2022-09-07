@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CarPart" , menuName = "ScriptableObjects / Car Part")]
-public class CarPartData : ScriptableObject
+public class CarPartData : Data
 {
-	enum PartTransform
+	public enum PartTransform
 	{
 		fBumper,
 		bBumper,
@@ -12,9 +12,10 @@ public class CarPartData : ScriptableObject
 		cowling,
 		rim
 	}
-
-	[SerializeField] PartTransform partTransform;
-	public string partName;
+	[Header("Car Part Data")]
+	public GameObject partModel;
+    public PartTransform partTransform;
+	public int partTransformIndex;
 	[Range(1, 5)] public int partLevel;
 	public int price;
 	public Properties properties;    

@@ -1,11 +1,11 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Car", menuName = "ScriptableObjects / Car ")]
-public class CarData : ScriptableObject
+public class CarData : Data
 {
-    public string carName;
-    public string description;
+    [Header("Car Data")]
     public int price;
     [Range(1, 5)] public int carLevel;
+    //public string description;
     public Properties properties;
 }

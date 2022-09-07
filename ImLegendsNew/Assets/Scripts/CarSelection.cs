@@ -7,6 +7,9 @@ public class CarSelection : MonoBehaviour
     [SerializeField] Button nextButton;
 
     int currentCarIndex;
+
+    public static Car car;
+
     private void Start()
     {
         currentCarIndex = PlayerPrefs.GetInt("CurrentCarIndex");
@@ -19,6 +22,8 @@ public class CarSelection : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(i == _index);
         }
+
+        car = transform.GetChild(_index).GetComponent<Car>();
 
         if (previousButton == null)
             return;
