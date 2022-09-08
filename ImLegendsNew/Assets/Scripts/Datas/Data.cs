@@ -10,8 +10,7 @@ public class Data : ScriptableObject
 	}
 
 	public ItemType itemType;
-	public string itemName;
-	public string description;
-	public Sprite sprite;
+	public string _name;
+	public string description; 
 	public GameObject itemPrefab;
 }

@@ -10,34 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b2c09180badd384aac057ebb05d7c92, type: 3}
-  m_Name: CarPart 2
+  m_Name: carPart5
   m_EditorClassIdentifier: 
   itemType: 1
   _name: 
-  description: 'Speed : 5
+  description: 'carPart
 
-    Armor : 5
+    Level 3
 
-    Fuel Tank : 5
 
-    Zombie Resist :
-    5
+    Speed : 15
 
-    Monster D. : 2
+    Armor : 15
 
-    Combo D. : 2
+    Fuel Tank
+    : 15
+
+    Zombie Resist : 15
 
 '
   itemPrefab: {fileID: 6551160594476470020, guid: 2056ace6afe9343479e7ff862f1fb40d, type: 3}
   partModel: {fileID: 4456142000247354008, guid: 4bf8201a0f95cbe41a2afcf07ee20886, type: 3}
   partTransform: 0
-  partTransformIndex: 1
+  partTransformIndex: 4
   partLevel: 3
   price: 0
   properties:
-    speed: 5
-    armor: 5
-    fuelTank: 5
-    zombieResist: 5
-    monsterDuration: 2
-    comboDuration: 2
+    speed: 50
+    armor: 0
+    fuelTank: 0
+    zombieResist: 15
+    monsterDuration: 0
+    comboDuration: 0

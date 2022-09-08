@@ -14,7 +14,7 @@ public class Properties
     {
         Properties prop = new()
         {
-            speed = speed,
+            speed = this.speed,
             armor = this.armor,
             fuelTank = this.fuelTank,
             zombieResist = this.zombieResist,
@@ -23,5 +23,17 @@ public class Properties
         };
 
         return prop;
+    }
+
+    public static Properties AddPropertiesValue(Properties mainProp , Properties addProp , int islem)
+    {
+        mainProp.speed += addProp.speed * islem;
+        mainProp.armor += addProp.armor * islem;
+        mainProp.fuelTank += addProp.fuelTank * islem;
+        mainProp.zombieResist += addProp.zombieResist * islem;
+        mainProp.monsterDuration += addProp.monsterDuration * islem;
+        mainProp.comboDuration += addProp.comboDuration * islem;
+
+        return mainProp;
     }
 }

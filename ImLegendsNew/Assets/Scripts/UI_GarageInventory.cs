@@ -43,7 +43,7 @@ public class UI_GarageInventory : MonoBehaviour
         {
             GameObject _item = Instantiate(data.itemPrefab, inventorySlots[i]);
             _item.transform.localPosition = new Vector2(37.5f, 37.5f);
-            _item.GetComponent<Image>().sprite = data.sprite;
+            //_item.GetComponent<Image>().sprite = data.sprite;
 
             switch (data.itemType)
             {                

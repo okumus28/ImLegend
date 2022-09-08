@@ -10,7 +10,7 @@ public class CarSelection : MonoBehaviour
 
     public static Car car;
 
-    private void Start()
+    private void Awake()
     {
         currentCarIndex = PlayerPrefs.GetInt("CurrentCarIndex");
         SelectedCar(currentCarIndex);

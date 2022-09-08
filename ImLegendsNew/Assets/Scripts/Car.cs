@@ -11,40 +11,38 @@ public class Car : MonoBehaviour
 
     public Transform partTransformParent;
 
-    [SerializeField] CarData carData;
-    Properties properties;
+    public int currentFBumper;
+    public int currentBBumper;
+    public int currentSides;
+    public int currentWindows;
+    public int currentCowling;
+    public int currentRims;
+
+    public CarData carData;
+    public Properties properties;
+
+    [SerializeField] GarageUI garageUI;
 
     private void OnEnable()
     {
         properties = carData.properties.GetValues();
 
-        for (int i = 0; partTransformParent != null && i < partTransformParent.childCount; i++)
-        {
-            PartProperties(partTransformParent.GetChild(i));
-        }
-        UI_Property.Instance.UI_PropertiesUpdate(this.properties);
+        garageUI.SpriteUpdate(fBumperTransform , garageUI.fbbSprite);
+        garageUI.SpriteUpdate(bBumperTransform , garageUI.bbbSprite);
+        garageUI.SpriteUpdate(sidesTransform , garageUI.sidesSprite);
+        garageUI.SpriteUpdate(windowsTransform , garageUI.windowsSprite);
+        garageUI.SpriteUpdate(cowlingTransform , garageUI.cowlingsSprite);
+        garageUI.SpriteUpdate(rimsTransform , garageUI.rimsSprite);
+
+        fBumperTransform.GetChild(0).gameObject.SetActive(true);
+        bBumperTransform.GetChild(3).gameObject.SetActive(true);
+        sidesTransform.GetChild(4).gameObject.SetActive(true);
+
+        //UI_Property.Instance.UI_PropertiesUpdate(properties);
     }
 
     private void OnDisable()
     {
         properties = carData.properties;
-    }
-
-    void PartProperties(Transform _partTransform)
-    {
-        for (int i = 0; i < _partTransform.childCount; i++)
-        {
-            if (_partTransform.GetChild(i).gameObject.activeSelf == true)
-            {
-                Properties partProp = _partTransform.GetChild(i).GetComponent<CarPart>().carPartData.properties;
-                properties.speed += partProp.speed;
-                properties.armor += partProp.armor;
-                properties.fuelTank += partProp.fuelTank;
-                properties.zombieResist += partProp.zombieResist;
-                properties.monsterDuration += partProp.monsterDuration;
-                properties.comboDuration += partProp.comboDuration;
-                return;
-            }
-        }
     }
 }

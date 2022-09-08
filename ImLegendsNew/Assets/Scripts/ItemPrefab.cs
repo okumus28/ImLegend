@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemPrefab : MonoBehaviour , IPointerClickHandler , ISelectHandler , IDeselectHandler
+public class ItemPrefab : MonoBehaviour , ISelectHandler , IDeselectHandler
 {
     public Data item;
 
@@ -12,53 +12,7 @@ public class ItemPrefab : MonoBehaviour , IPointerClickHandler , ISelectHandler 
     public CarPartData itemPart;
     public ChestData itemChest;
 
-    [SerializeField] int descriptionPanelHeight;
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        UI_GarageInventory.Instance.applyButton.onClick.RemoveAllListeners();
-        UI_GarageInventory.Instance.applyButton.onClick.AddListener(()=> ApplyButtton());
-
-        item.description = "";
-        PartDecription();
-        UI_GarageInventory.Instance.inventoryInfoText.transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(300,descriptionPanelHeight);
-        UI_GarageInventory.Instance.inventoryInfoText.text = item.description;
-
-        if (itemPart.partModel != null)
-        {
-            switch (itemPart.partTransform)
-            {
-                case CarPartData.PartTransform.fBumper:
-                    GameObject obj = Instantiate(itemPart.partModel, CarSelection.car.fBumperTransform);
-                    obj.transform.localPosition = Vector3.zero;
-                    break;
-                case CarPartData.PartTransform.bBumper:
-                    obj = Instantiate(itemPart.partModel, CarSelection.car.bBumperTransform);
-                    obj.transform.localPosition = Vector3.zero;
-                    break;
-                case CarPartData.PartTransform.side:
-                    obj = Instantiate(itemPart.partModel, CarSelection.car.sidesTransform);
-                    obj.transform.localPosition = Vector3.zero;
-                    break;
-                case CarPartData.PartTransform.window:
-                    obj = Instantiate(itemPart.partModel, CarSelection.car.windowsTransform);
-                    obj.transform.localPosition = Vector3.zero;
-                    break;
-                case CarPartData.PartTransform.cowling:
-                    obj = Instantiate(itemPart.partModel, CarSelection.car.cowlingTransform);
-                    obj.transform.localPosition = Vector3.zero;
-                    break;
-                case CarPartData.PartTransform.rim:
-                    obj = Instantiate(itemPart.partModel, CarSelection.car.rimsTransform);
-                    obj.transform.localPosition = Vector3.zero;
-                    break;
-                default:
-                    break; 
-            }
-        }
-
-        Debug.Log("On ciklicadas");
-    }
+    [SerializeField] int descriptionPanelHeight;    
 
     public void PartDecription()
     {
@@ -68,9 +22,9 @@ public class ItemPrefab : MonoBehaviour , IPointerClickHandler , ISelectHandler 
             return;
         }
         item.description += item.name + "\n";
-        item.description += "Level " + itemPart.partLevel + "\n";
+        item.description += "Level " + itemPart.partLevel + "\n\n";
 
-        descriptionPanelHeight = 80;
+        descriptionPanelHeight = 120;
 
         if (itemPart.properties.speed != 0)
         {
@@ -194,8 +148,42 @@ public class ItemPrefab : MonoBehaviour , IPointerClickHandler , ISelectHandler 
 
     public void OnSelect(BaseEventData eventData)
     {
+        UI_GarageInventory.Instance.applyButton.onClick.RemoveAllListeners();
+        UI_GarageInventory.Instance.applyButton.onClick.AddListener(() => ApplyButtton());
+
+        item.description = "";
+        PartDecription();
+        UI_GarageInventory.Instance.inventoryInfoText.transform.parent.GetComponent<RectTransform>().sizeDelta = new Vector2(300, descriptionPanelHeight);
+        UI_GarageInventory.Instance.inventoryInfoText.text = item.description;
+
         UI_GarageInventory.Instance.inventoryInfoText.transform.parent.gameObject.SetActive(true);
         Debug.Log("select");
+
+        if (itemPart.partModel != null)
+        {
+            switch (itemPart.partTransform)
+            {
+                case CarPartData.PartTransform.fBumper:
+                    for (int i = 0; i < CarSelection.car.fBumperTransform.childCount; i++)
+                    {
+                        CarSelection.car.fBumperTransform.GetChild(i).gameObject.SetActive(i == itemPart.partTransformIndex);
+                    }
+                    CarSelection.car.fBumperTransform.GetChild(itemPart.partTransformIndex).GetComponent<CarPart>().carPartData = itemPart;
+                    break;
+                case CarPartData.PartTransform.bBumper:
+                    break;
+                case CarPartData.PartTransform.side:
+                    break;
+                case CarPartData.PartTransform.window:
+                    break;
+                case CarPartData.PartTransform.cowling:
+                    break;
+                case CarPartData.PartTransform.rim:
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void OnDeselect(BaseEventData eventData)

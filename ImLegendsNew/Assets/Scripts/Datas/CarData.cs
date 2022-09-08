@@ -3,9 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Car", menuName = "ScriptableObjects / Car ")]
 public class CarData : Data
 {
-    [Header("Car Data")]
-    public int price;
+    public string carName;
     [Range(1, 5)] public int carLevel;
-    //public string description;
+    public int price;
     public Properties properties;
 }

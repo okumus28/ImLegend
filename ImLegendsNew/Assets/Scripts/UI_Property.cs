@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class UI_Property : MonoBehaviour
 {
     [Header("Value Texts")]
-    [SerializeField] TextMeshProUGUI speedText;
-    [SerializeField] TextMeshProUGUI armorText;
-    [SerializeField] TextMeshProUGUI fuelTankText;
-    [SerializeField] TextMeshProUGUI zombieResistText;
-    [SerializeField] TextMeshProUGUI monsterDurationText;
-    [SerializeField] TextMeshProUGUI comboDurationText;
+    public TextMeshProUGUI speedText;
+    public TextMeshProUGUI armorText;
+    public TextMeshProUGUI fuelTankText;
+    public TextMeshProUGUI zombieResistText;
+    public TextMeshProUGUI monsterDurationText;
+    public TextMeshProUGUI comboDurationText;
 
     [Header("Fill Bars")]
-    [SerializeField] Image speedFillBar;
-    [SerializeField] Image armorFillBar;
-    [SerializeField] Image fuelTankFillBar;
-    [SerializeField] Image zombieResistFillBar;
-    [SerializeField] Image monsterDurationFillBar;
-    [SerializeField] Image comboDurationFillBar;
+    public Image speedFillBar;
+    public Image armorFillBar;
+    public Image fuelTankFillBar;
+    public Image zombieResistFillBar;
+    public Image monsterDurationFillBar;
+    public Image comboDurationFillBar;
 
     public static UI_Property Instance { get; private set; }
 
