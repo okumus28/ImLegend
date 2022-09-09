@@ -113,37 +113,37 @@ public class ItemPrefab : MonoBehaviour , ISelectHandler , IDeselectHandler
 
     void ModifyPart(Car _car , CarPartData _partData)
     {
-        switch (_partData.partTransform)
-        {
-            case CarPartData.PartTransform.fBumper:
-                UpdateParts(_car, _car.fBumperTransform, _partData);
-                break;
-            case CarPartData.PartTransform.bBumper:
-                UpdateParts(_car, _car.bBumperTransform, _partData);
-                break;
-            case CarPartData.PartTransform.side:
-                UpdateParts(_car, _car.sidesTransform, _partData);
-                break;
-            case CarPartData.PartTransform.window:
-                UpdateParts(_car, _car.windowsTransform, _partData);
-                break;
-            case CarPartData.PartTransform.cowling:
-                UpdateParts(_car, _car.cowlingTransform, _partData);
-                break;
-            case CarPartData.PartTransform.rim:
-                UpdateParts(_car, _car.rimsTransform, _partData);
-                break;
-            default:
-                break;
-        }
+        //switch (_partData.partTransform)
+        //{
+        //    case CarPartData.PartTransform.fBumper:
+        //        //UpdateParts(_car, _car.fBumperTransform, _partData);
+        //        break;
+        //    case CarPartData.PartTransform.bBumper:
+        //        UpdateParts(_car, _car.bBumperTransform, _partData);
+        //        break;
+        //    case CarPartData.PartTransform.side:
+        //        UpdateParts(_car, _car.sidesTransform, _partData);
+        //        break;
+        //    case CarPartData.PartTransform.window:
+        //        UpdateParts(_car, _car.windowsTransform, _partData);
+        //        break;
+        //    case CarPartData.PartTransform.cowling:
+        //        UpdateParts(_car, _car.cowlingTransform, _partData);
+        //        break;
+        //    case CarPartData.PartTransform.rim:
+        //        UpdateParts(_car, _car.rimsTransform, _partData);
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     void UpdateParts(Car _car , Transform _partsTransform , CarPartData _carPartData)
     {
-        for (int i = 0; i < _partsTransform.childCount; i++)
-        {
-            _car.fBumperTransform.GetChild(i).gameObject.SetActive(i == _carPartData.partTransformIndex);
-        }
+        //for (int i = 0; i < _partsTransform.childCount; i++)
+        //{
+        //    _car.fBumperTransform.GetChild(i).gameObject.SetActive(i == _carPartData.partTransformIndex);
+        //}
     }
 
     public void OnSelect(BaseEventData eventData)
@@ -159,31 +159,31 @@ public class ItemPrefab : MonoBehaviour , ISelectHandler , IDeselectHandler
         UI_GarageInventory.Instance.inventoryInfoText.transform.parent.gameObject.SetActive(true);
         Debug.Log("select");
 
-        if (itemPart.partModel != null)
-        {
-            switch (itemPart.partTransform)
-            {
-                case CarPartData.PartTransform.fBumper:
-                    for (int i = 0; i < CarSelection.car.fBumperTransform.childCount; i++)
-                    {
-                        CarSelection.car.fBumperTransform.GetChild(i).gameObject.SetActive(i == itemPart.partTransformIndex);
-                    }
-                    CarSelection.car.fBumperTransform.GetChild(itemPart.partTransformIndex).GetComponent<CarPart>().carPartData = itemPart;
-                    break;
-                case CarPartData.PartTransform.bBumper:
-                    break;
-                case CarPartData.PartTransform.side:
-                    break;
-                case CarPartData.PartTransform.window:
-                    break;
-                case CarPartData.PartTransform.cowling:
-                    break;
-                case CarPartData.PartTransform.rim:
-                    break;
-                default:
-                    break;
-            }
-        }
+        //if (itemPart.partModel != null)
+        //{
+        //    switch (itemPart.partTransform)
+        //    {
+        //        case CarPartData.PartTransform.fBumper:
+        //            for (int i = 0; i < CarSelection.car.fBumperTransform.childCount; i++)
+        //            {
+        //                CarSelection.car.fBumperTransform.GetChild(i).gameObject.SetActive(i == itemPart.partTransformIndex);
+        //            }
+        //            CarSelection.car.fBumperTransform.GetChild(itemPart.partTransformIndex).GetComponent<CarPart>().carPartData = itemPart;
+        //            break;
+        //        case CarPartData.PartTransform.bBumper:
+        //            break;
+        //        case CarPartData.PartTransform.side:
+        //            break;
+        //        case CarPartData.PartTransform.window:
+        //            break;
+        //        case CarPartData.PartTransform.cowling:
+        //            break;
+        //        case CarPartData.PartTransform.rim:
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
     }
 
     public void OnDeselect(BaseEventData eventData)

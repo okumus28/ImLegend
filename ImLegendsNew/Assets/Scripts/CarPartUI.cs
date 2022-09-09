@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
 {
@@ -17,6 +15,9 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
 
     private void OnEnable()
     {
+        //PlayerPrefs.SetInt(CarSelection.car.name + carPartData.name,0);
+
+        //Kilit Resmi On/Off
         if (PlayerPrefs.GetInt(CarSelection.car.name + carPartData.name) == 1)
         {
             transform.GetChild(0).gameObject.SetActive(false);
@@ -28,6 +29,31 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
+        GetACtivePartIndex();
+
+        if (PlayerPrefs.GetInt(CarSelection.car.name + carPartData.name) == 1)
+        {
+            if (tempIndex == carPartData.partTransformIndex)
+            {
+                GarageUI.instance.appplyButton.interactable = false;
+                GarageUI.instance.appplyButtonText.text = "Equiped";
+            }
+            else
+            {
+                GarageUI.instance.appplyButton.interactable = true;
+                GarageUI.instance.appplyButtonText.text = "Equip";
+                GarageUI.instance.appplyButton.onClick.RemoveAllListeners();
+                GarageUI.instance.appplyButton.onClick.AddListener(() => EquipEvent());
+            }
+        }
+        else
+        {
+            GarageUI.instance.appplyButton.interactable = true;
+            GarageUI.instance.appplyButtonText.text = "Buy";
+            GarageUI.instance.appplyButton.onClick.RemoveAllListeners();
+            GarageUI.instance.appplyButton.onClick.AddListener(() => BuyEvent());
+        }
+
         tempProp = CarSelection.car.properties.GetValues();
 
         SelectedPart();
@@ -35,7 +61,32 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
         PropUpdate();
     }
 
+    public void EquipEvent()
+    {
+        CarSelection.car.SetIndex(partCarTransform, carPartData.partTransformIndex);
+        tempProp = CarSelection.car.properties.GetValues();
+        GetComponent<Button>().Select();
+    }
+
+    public void BuyEvent()
+    {
+        PlayerPrefs.SetInt(CarSelection.car.name + carPartData.name, 1);
+        transform.GetChild(0).gameObject.SetActive(false);
+        CarSelection.car.SetIndex(partCarTransform, carPartData.partTransformIndex);
+        tempProp = CarSelection.car.properties.GetValues();
+        GetComponent<Button>().Select();
+    }
+
+
     void SelectedPart()
+    {
+        for (int i = 0; i < partCarTransform.childCount; i++)
+        {          
+            partCarTransform.GetChild(i).gameObject.SetActive(i == carPartData.partTransformIndex);
+        }
+    }
+
+    void GetACtivePartIndex()
     {
         tempIndex = 10;
 
@@ -45,7 +96,6 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
             {
                 tempIndex = i;
             }
-            partCarTransform.GetChild(i).gameObject.SetActive(i == carPartData.partTransformIndex);
         }
     }
 

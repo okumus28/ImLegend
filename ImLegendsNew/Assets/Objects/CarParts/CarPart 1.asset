@@ -30,9 +30,9 @@ MonoBehaviour:
   partLevel: 2
   price: 0
   properties:
-    speed: 25
-    armor: 25
-    fuelTank: 25
-    zombieResist: 25
-    monsterDuration: 2.4
-    comboDuration: 2.6
+    speed: 0
+    armor: 0
+    fuelTank: 0
+    zombieResist: 0
+    monsterDuration: 0
+    comboDuration: 0
