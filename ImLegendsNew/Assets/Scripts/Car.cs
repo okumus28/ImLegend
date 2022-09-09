@@ -22,6 +22,8 @@ public class Car : MonoBehaviour
     public CarData carData;
     public Properties properties;
 
+    public bool purchase;
+
     [SerializeField] GarageUI garageUI;
 
     private void Awake()
@@ -34,9 +36,12 @@ public class Car : MonoBehaviour
         currentCowling = 0;
         currentRims = 0;
 
+        purchase = PlayerPrefs.GetInt(carData.carName + "purchase") == 1;
+
     }
     private void OnEnable()
     {
+        CarSelectButtonText();
 
         garageUI.carName.text = this.carData.name;
         properties = carData.properties.GetValues();
@@ -58,6 +63,44 @@ public class Car : MonoBehaviour
         rimsTransform.GetChild(currentRims).gameObject.SetActive(true);
 
         garageUI.fbbSprite.GetChild(currentFBumper+1).GetComponent<Button>().Select();
+    }
+
+    void BuyCar()
+    {
+        purchase = true;
+        PlayerPrefs.SetInt(carData.carName + "purchase", 1);
+        CarSelectButtonText();
+    }
+    void SelectCar()
+    {
+        PlayerPrefs.SetInt("CurrentCarIndex" ,CarSelection.currentCarIndex);
+        CarSelectButtonText();
+    }
+
+    public void CarSelectButtonText()
+    {
+        if (purchase)
+        {
+            if (CarSelection.currentCarIndex == PlayerPrefs.GetInt("CurrentCarIndex"))
+            {
+                garageUI.carSelectButtonText.text = "Selected";
+                garageUI.carSelectButton.interactable = false;
+            }
+            else
+            {
+                garageUI.carSelectButtonText.text = "Select";
+                garageUI.carSelectButton.interactable = true;
+                garageUI.carSelectButton.onClick.RemoveAllListeners();
+                garageUI.carSelectButton.onClick.AddListener(() => SelectCar());
+            }
+        }
+        else
+        {
+            garageUI.carSelectButtonText.text = "Buy";
+            garageUI.carSelectButton.interactable = true;
+            garageUI.carSelectButton.onClick.RemoveAllListeners();
+            garageUI.carSelectButton.onClick.AddListener(() => BuyCar());
+        }
     }
 
     private void OnDisable()

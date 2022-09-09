@@ -16,7 +16,7 @@ MonoBehaviour:
   _name: 
   description: 
   itemPrefab: {fileID: 6551160594476470020, guid: 2056ace6afe9343479e7ff862f1fb40d, type: 3}
-  carName: 
+  carName: panelvan
   carLevel: 2
   price: 10000
   properties:

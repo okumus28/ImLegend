@@ -24,6 +24,10 @@ public class GarageUI : MonoBehaviour
     public TextMeshProUGUI appplyButtonText;
 
     public Button firstSelect;
+
+    [Header ("Car Selection")]
+    public Button carSelectButton;
+    public TextMeshProUGUI carSelectButtonText;
     private void Awake()
     {
         instance = this;
@@ -48,5 +52,10 @@ public class GarageUI : MonoBehaviour
             spritePrefab.GetComponent<CarPartUI>().partCarTransform = _transformPart;
             Instantiate(spritePrefab, _transformSprites);
         }
+    }
+
+    public void LetsGoButton()
+    {
+
     }
 }
