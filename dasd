@@ -1,0 +1,513 @@
+[33mcommit 25bd68e59dcb3d6b1166962496cb8e94027b386f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 16:51:34 2022 +0300
+
+    aaaaa
+
+[1mdiff --git a/ImLegendsNew/Assets/Scenes/GarageScene 1.unity b/ImLegendsNew/Assets/Scenes/GarageScene 1.unity[m
+[1mindex 21ba2ba..138cf46 100644[m
+[1m--- a/ImLegendsNew/Assets/Scenes/GarageScene 1.unity[m	
+[1m+++ b/ImLegendsNew/Assets/Scenes/GarageScene 1.unity[m	
+[36m@@ -37,8 +37,8 @@[m [mRenderSettings:[m
+   m_ReflectionBounces: 1[m
+   m_ReflectionIntensity: 1[m
+   m_CustomReflection: {fileID: 0}[m
+[31m-  m_Sun: {fileID: 705507994}[m
+[31m-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}[m
+[32m+[m[32m  m_Sun: {fileID: 0}[m
+[32m+[m[32m  m_IndirectSpecularColor: {r: 0.3708987, g: 0.37837064, b: 0.35722545, a: 1}[m
+   m_UseRadianceAmbientProbe: 0[m
+ --- !u!157 &3[m
+ LightmapSettings:[m
+[36m@@ -75,18 +75,18 @@[m [mLightmapSettings:[m
+     m_BakeBackend: 1[m
+     m_PVRSampling: 1[m
+     m_PVRDirectSampleCount: 32[m
+[31m-    m_PVRSampleCount: 500[m
+[32m+[m[32m    m_PVRSampleCount: 512[m
+     m_PVRBounces: 2[m
+[31m-    m_PVREnvironmentSampleCount: 500[m
+[32m+[m[32m    m_PVREnvironmentSampleCount: 256[m
+     m_PVREnvironmentReferencePointCount: 2048[m
+[31m-    m_PVRFilteringMode: 2[m
+[31m-    m_PVRDenoiserTypeDirect: 0[m
+[31m-    m_PVRDenoiserTypeIndirect: 0[m
+[31m-    m_PVRDenoiserTypeAO: 0[m
+[32m+[m[32m    m_PVRFilteringMode: 1[m
+[32m+[m[32m    m_PVRDenoiserTypeDirect: 1[m
+[32m+[m[32m    m_PVRDenoiserTypeIndirect: 1[m
+[32m+[m[32m    m_PVRDenoiserTypeAO: 1[m
+     m_PVRFilterTypeDirect: 0[m
+     m_PVRFilterTypeIndirect: 0[m
+     m_PVRFilterTypeAO: 0[m
+[31m-    m_PVREnvironmentMIS: 0[m
+[32m+[m[32m    m_PVREnvironmentMIS: 1[m
+     m_PVRCulling: 1[m
+     m_PVRFilteringGaussRadiusDirect: 1[m
+     m_PVRFilteringGaussRadiusIndirect: 5[m
+[36m@@ -123,11 +123,7 @@[m [mNavMeshSettings:[m
+     debug:[m
+       m_Flags: 0[m
+   m_NavMeshData: {fileID: 0}[m
+[31m-<<<<<<< Updated upstream[m
+[31m---- !u!1 &4209209[m
+[31m-=======[m
+[31m---- !u!1 &4383690[m
+[31m->>>>>>> Stashed changes[m
+[32m+[m[32m--- !u!1 &1536933262[m
+ GameObject:[m
+   m_ObjectHideFlags: 0[m
+   m_CorrespondingSourceObject: {fileID: 0}[m
+[36m@@ -135,37914 +131,26 @@[m [mGameObject:[m
+   m_PrefabAsset: {fileID: 0}[m
+   serializedVersion: 6[m
+   m_Component:[m
+[31m-<<<<<<< Updated upstream[m
+[31m-  - component: {fileID: 4209213}[m
+[31m-  - component: {fileID: 4209212}[m
+[31m-  - component: {fileID: 4209211}[m
+[31m-  - component: {fileID: 4209210}[m
+[31m-  m_Layer: 5[m
+[31m-  m_Name: BBumperButton[m
+[31m-=======[m
+[31m-  - component: {fileID: 4383691}[m
+[32m+[m[32m  - component: {fileID: 1536933263}[m
+   m_Layer: 0[m
+[31m-  m_Name: FBumpers[m
+[31m->>>>>>> Stashed changes[m
+[31m-  m_TagString: Untagged[m
+[31m-  m_Icon: {fileID: 0}[m
+[31m-  m_NavMeshLayer: 0[m
+[31m-  m_StaticEditorFlags: 0[m
+[31m-  m_IsActive: 1[m
+[31m-<<<<<<< Updated upstream[m
+[31m---- !u!114 &4209210[m
+[31m-MonoBehaviour:[m
+[31m-=======[m
+[31m---- !u!4 &4383691[m
+[31m-Transform:[m
+[31m->>>>>>> Stashed changes[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-<<<<<<< Updated upstream[m
+[31m-  m_GameObject: {fileID: 4209209}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  m_Navigation:[m
+[31m-    m_Mode: 3[m
+[31m-    m_WrapAround: 0[m
+[31m-    m_SelectOnUp: {fileID: 0}[m
+[31m-    m_SelectOnDown: {fileID: 0}[m
+[31m-    m_SelectOnLeft: {fileID: 0}[m
+[31m-    m_SelectOnRight: {fileID: 0}[m
+[31m-  m_Transition: 1[m
+[31m-  m_Colors:[m
+[31m-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}[m
+[31m-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}[m
+[31m-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}[m
+[31m-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}[m
+[31m-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}[m
+[31m-    m_ColorMultiplier: 1[m
+[31m-    m_FadeDuration: 0.1[m
+[31m-  m_SpriteState:[m
+[31m-    m_HighlightedSprite: {fileID: 0}[m
+[31m-    m_PressedSprite: {fileID: 0}[m
+[31m-    m_SelectedSprite: {fileID: 0}[m
+[31m-    m_DisabledSprite: {fileID: 0}[m
+[31m-  m_AnimationTriggers:[m
+[31m-    m_NormalTrigger: Normal[m
+[31m-    m_HighlightedTrigger: Highlighted[m
+[31m-    m_PressedTrigger: Pressed[m
+[31m-    m_SelectedTrigger: Selected[m
+[31m-    m_DisabledTrigger: Disabled[m
+[31m-  m_Interactable: 1[m
+[31m-  m_TargetGraphic: {fileID: 4209211}[m
+[31m-  m_OnClick:[m
+[31m-    m_PersistentCalls:[m
+[31m-      m_Calls:[m
+[31m-      - m_Target: {fileID: 1112938144}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine[m
+[31m-        m_MethodName: SetActive[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 0[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 1235886186}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine[m
+[31m-        m_MethodName: SetActive[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 1[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 781405324}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine[m
+[31m-        m_MethodName: SetActive[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 0[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 1530174088}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine[m
+[31m-        m_MethodName: SetActive[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 0[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 643080479}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine[m
+[31m-        m_MethodName: SetActive[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 0[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 132241158}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine[m
+[31m-        m_MethodName: SetActive[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 0[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 461948535}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine[m
+[31m-        m_MethodName: SetActive[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 0[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 1581911197}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI[m
+[31m-        m_MethodName: set_interactable[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 1[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 4209210}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI[m
+[31m-        m_MethodName: set_interactable[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 0[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 839910613}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI[m
+[31m-        m_MethodName: set_interactable[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 1[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 2092749378}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI[m
+[31m-        m_MethodName: set_interactable[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 1[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 1854278240}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI[m
+[31m-        m_MethodName: set_interactable[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 1[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 963736182}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI[m
+[31m-        m_MethodName: set_interactable[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 1[m
+[31m-        m_CallState: 2[m
+[31m-      - m_Target: {fileID: 293335867}[m
+[31m-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI[m
+[31m-        m_MethodName: set_interactable[m
+[31m-        m_Mode: 6[m
+[31m-        m_Arguments:[m
+[31m-          m_ObjectArgument: {fileID: 0}[m
+[31m-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine[m
+[31m-          m_IntArgument: 0[m
+[31m-          m_FloatArgument: 0[m
+[31m-          m_StringArgument: [m
+[31m-          m_BoolArgument: 1[m
+[31m-        m_CallState: 2[m
+[31m---- !u!114 &4209211[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 4209209}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  m_Material: {fileID: 0}[m
+[31m-  m_Color: {r: 0, g: 0, b: 0, a: 1}[m
+[31m-  m_RaycastTarget: 1[m
+[31m-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}[m
+[31m-  m_Maskable: 1[m
+[31m-  m_OnCullStateChanged:[m
+[31m-    m_PersistentCalls:[m
+[31m-      m_Calls: [][m
+[31m-  m_Sprite: {fileID: 21300054, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}[m
+[31m-  m_Type: 0[m
+[31m-  m_PreserveAspect: 0[m
+[31m-  m_FillCenter: 1[m
+[31m-  m_FillMethod: 4[m
+[31m-  m_FillAmount: 1[m
+[31m-  m_FillClockwise: 1[m
+[31m-  m_FillOrigin: 0[m
+[31m-  m_UseSpriteMesh: 0[m
+[31m-  m_PixelsPerUnitMultiplier: 1[m
+[31m---- !u!222 &4209212[m
+[31m-CanvasRenderer:[m
+[31m-=======[m
+[31m-  m_GameObject: {fileID: 4383690}[m
+[31m-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}[m
+[31m-  m_LocalPosition: {x: 2.25, y: 0.75, z: 0}[m
+[31m-  m_LocalScale: {x: 1, y: 1, z: 1}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children:[m
+[31m-  - {fileID: 1847023213}[m
+[31m-  - {fileID: 1541181333}[m
+[31m-  - {fileID: 503150274}[m
+[31m-  - {fileID: 1809886072}[m
+[31m-  - {fileID: 1272960048}[m
+[31m-  m_Father: {fileID: 1988089470}[m
+[31m-  m_RootOrder: 0[m
+[31m-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!1 &6032299[m
+[31m-GameObject:[m
+[31m->>>>>>> Stashed changes[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-<<<<<<< Updated upstream[m
+[31m-  m_GameObject: {fileID: 4209209}[m
+[31m-  m_CullTransparentMesh: 1[m
+[31m---- !u!224 &4209213[m
+[31m-RectTransform:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 4209209}[m
+[31m-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}[m
+[31m-  m_LocalPosition: {x: 0, y: 0, z: 0}[m
+[31m-  m_LocalScale: {x: 1, y: 1, z: 1}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children:[m
+[31m-  - {fileID: 1243165917}[m
+[31m-  m_Father: {fileID: 1214453048}[m
+[31m-  m_RootOrder: 1[m
+[31m-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m-  m_AnchorMin: {x: 0.5, y: 0.5}[m
+[31m-  m_AnchorMax: {x: 0.5, y: 0.5}[m
+[31m-  m_AnchoredPosition: {x: -550, y: 0}[m
+[31m-  m_SizeDelta: {x: 270, y: 100}[m
+[31m-  m_Pivot: {x: 0.5, y: 0.5}[m
+[31m---- !u!1 &30479159[m
+[31m-GameObject:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  serializedVersion: 6[m
+[31m-  m_Component:[m
+[31m-  - component: {fileID: 30479160}[m
+[31m-  - component: {fileID: 30479161}[m
+[31m-  m_Layer: 0[m
+[31m-  m_Name: GameObject_12[m
+[31m-=======[m
+[31m-  serializedVersion: 6[m
+[31m-  m_Component:[m
+[31m-  - component: {fileID: 6032300}[m
+[31m-  m_Layer: 0[m
+[31m-  m_Name: Rims[m
+[31m->>>>>>> Stashed changes[m
+[31m-  m_TagString: Untagged[m
+[31m-  m_Icon: {fileID: 0}[m
+[31m-  m_NavMeshLayer: 0[m
+[31m-  m_StaticEditorFlags: 0[m
+[31m-<<<<<<< Updated upstream[m
+[31m-  m_IsActive: 0[m
+[31m---- !u!4 &30479160[m
+[31m-Transform:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 30479159}[m
+[31m-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}[m
+[31m-  m_LocalPosition: {x: 0, y: 0, z: 0}[m
+[31m-  m_LocalScale: {x: 1, y: 1, z: 1}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children: [][m
+[31m-  m_Father: {fileID: 1408578617}[m
+[31m-  m_RootOrder: 1[m
+[31m-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!114 &30479161[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 30479159}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: 5ab9a024846c1bc4f81f45028d1c2b20, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  carPartData: {fileID: 11400000, guid: 855f8df3b3193c9419a093de77c1ef9a, type: 2}[m
+[31m---- !u!1 &36574757[m
+[31m-GameObject:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  serializedVersion: 6[m
+[31m-  m_Component:[m
+[31m-  - component: {fileID: 36574758}[m
+[31m-  - component: {fileID: 36574759}[m
+[31m-  m_Layer: 0[m
+[31m-  m_Name: GameObject_11[m
+[31m-  m_TagString: Untagged[m
+[31m-  m_Icon: {fileID: 0}[m
+[31m-  m_NavMeshLayer: 0[m
+[31m-  m_StaticEditorFlags: 0[m
+[31m-  m_IsActive: 0[m
+[31m---- !u!4 &36574758[m
+[31m-=======[m
+[31m-  m_IsActive: 1[m
+[31m---- !u!4 &6032300[m
+[31m->>>>>>> Stashed changes[m
+[31m-Transform:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 6032299}[m
+[31m-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}[m
+[31m-  m_LocalPosition: {x: 0, y: 0, z: 0}[m
+[31m-  m_LocalScale: {x: 1, y: 1, z: 1}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children:[m
+[31m-  - {fileID: 686539245}[m
+[31m-  - {fileID: 1677380226}[m
+[31m-  - {fileID: 1050332368}[m
+[31m-  - {fileID: 1352597515}[m
+[31m-  - {fileID: 1248863568}[m
+[31m-  m_Father: {fileID: 927360947}[m
+[31m-  m_RootOrder: 5[m
+[31m-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!1 &6376021[m
+[31m-GameObject:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  serializedVersion: 6[m
+[31m-  m_Component:[m
+[31m-  - component: {fileID: 6376022}[m
+[31m-  - component: {fileID: 6376024}[m
+[31m-  - component: {fileID: 6376023}[m
+[31m-  m_Layer: 0[m
+[31m-  m_Name: Capsule_3[m
+[31m-  m_TagString: Untagged[m
+[31m-  m_Icon: {fileID: 0}[m
+[31m-  m_NavMeshLayer: 0[m
+[31m-  m_StaticEditorFlags: 0[m
+[31m-  m_IsActive: 0[m
+[31m---- !u!4 &6376022[m
+[31m-Transform:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 6376021}[m
+[31m-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}[m
+[31m-  m_LocalPosition: {x: 2.25, y: 0.75, z: 0}[m
+[31m-  m_LocalScale: {x: 0.35, y: 1, z: 0.7500002}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children: [][m
+[31m-  m_Father: {fileID: 221864016}[m
+[31m-  m_RootOrder: 1[m
+[31m-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}[m
+[31m---- !u!114 &6376023[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 0[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 6376021}[m
+[3

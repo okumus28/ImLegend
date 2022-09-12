@@ -1,0 +1,111 @@
+[33mcommit 25bd68e59dcb3d6b1166962496cb8e94027b386f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 16:51:34 2022 +0300
+
+    aaaaa
+
+[33mcommit 5416e8fc832ddc8e7fc6a5cb95820dbab0d08ce8[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 16:37:16 2022 +0300
+
+    adasdada
+
+[33mcommit 0f5c4ff4fecf85f61b5b89dffb248f0d9a731779[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 16:32:26 2022 +0300
+
+    Merge branch 'main' of https://github.com/okumus28/ImLegends
+
+[33mcommit 95ea56839c86b3be502fc2cd06743d9fc5f1a01d[m
+Merge: c631a73 d7edcce
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 16:32:01 2022 +0300
+
+    Merge branch 'main' of https://github.com/okumus28/ImLegends
+
+[33mcommit c631a7331320ae67a0e1bba8953e77096cc8e21e[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 16:31:30 2022 +0300
+
+    Revert "complete main menu"
+    
+    This reverts commit 20afa307f832beffea91e0bdd535218cea752f49.
+
+[33mcommit 20afa307f832beffea91e0bdd535218cea752f49[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 05:24:43 2022 +0300
+
+    complete main menu
+
+[33mcommit d7edcceca39c275203064f5948525c491c5fabdb[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 12 05:24:43 2022 +0300
+
+    complete main menu
+
+[33mcommit 43b762e21ed01c40fc4fede74f42387d335755ee[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Fri Sep 9 19:08:43 2022 +0300
+
+    garage uı update
+    
+    garaj uı iyileştirme
+
+[33mcommit 03e61296778e3aad76aedda6eb864215d9e7ee2f[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Fri Sep 9 04:10:34 2022 +0300
+
+    garage uı
+    
+    garaj arayüzü tamamlandı sayılır car select eklendi car satınalma ve seçme eklenecek
+
+[33mcommit 1fc47e0ca2456884023811f59229dad0ec143039[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Thu Sep 8 04:26:50 2022 +0300
+
+    pert selection
+    
+    parça seçim işlemleri tamamlandı
+
+[33mcommit 0d0de8be9c092e9893b80cca2dd5f2a6690dc3ba[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Wed Sep 7 05:16:06 2022 +0300
+
+    garage inventory
+    
+    envanter garaj ve normal olarak ikiyi ayrıldı
+    garaj envanteri kısmen yapıldı
+
+[33mcommit 02133abc367a18cc2542fd14df52a14221dac6fb[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Tue Sep 6 19:01:25 2022 +0300
+
+    Garage menu and Inventory become
+    
+    garaj menu yapılmaya baslandı ve inventory kısmen oluşturuldu
+
+[33mcommit cf5d958e0f5a8277ca7ddc7b94eb49a675825177[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Tue Sep 6 04:01:26 2022 +0300
+
+    car save & property ui
+    
+    seçili araç kaydı ve araç özelliklerinin ekranda gösterilmesi
+
+[33mcommit b1a9cbdab4b4fa32d68bf60267363a8b277cd7d3[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Tue Sep 6 02:03:49 2022 +0300
+
+    car selection
+
+[33mcommit da2b2127f58d1a3340627bd2f8caf7db0cea0d4d[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 5 23:51:06 2022 +0300
+
+    Yeni Proje Oluşturuldu
+
+[33mcommit 7bf438a5a5701fca71b072fed8a127ae9499326c[m
+Author: okumus28 <bunyaminokumu28@gmail.com>
+Date:   Mon Sep 5 22:26:51 2022 +0300
+
+    Initial commit

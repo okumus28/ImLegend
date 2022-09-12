@@ -1,16 +1,14 @@
-using JetBrains.Annotations;
-using UnityEditor.Purchasing;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Car : MonoBehaviour
 {
-    [System.NonSerialized] public Transform fBumperTransform;
-    [System.NonSerialized] public Transform bBumperTransform;
-    [System.NonSerialized] public Transform sidesTransform;
-    [System.NonSerialized] public Transform windowsTransform;
-    [System.NonSerialized] public Transform cowlingTransform;
-    [System.NonSerialized] public Transform rimsTransform;
+    public Transform fBumperTransform;
+    public Transform bBumperTransform;
+    public Transform sidesTransform;
+    public Transform windowsTransform;
+    public Transform cowlingTransform;
+    public Transform rimsTransform;
 
     public Transform partTransformParent;
 
@@ -27,80 +25,35 @@ public class Car : MonoBehaviour
     public bool purchase;
 
     [SerializeField] GarageUI garageUI;
-    public UI_Property uiProperty;
 
     private void Awake()
     {
-        fBumperTransform = partTransformParent.GetChild(0);
-        bBumperTransform = partTransformParent.GetChild(1);
-        sidesTransform = partTransformParent.GetChild(2);
-        windowsTransform = partTransformParent.GetChild(3);
-        cowlingTransform = partTransformParent.GetChild(4);
-        rimsTransform = partTransformParent.GetChild(5);
+        //Get car save data current part index
+        currentFBumper = 0;
+        currentBBumper = 0;
+        currentSides = 0;
+        currentWindows = 0;
+        currentCowling = 0;
+        currentRims = 0;
 
         purchase = PlayerPrefs.GetInt(carData.carName + "purchase") == 1;
 
     }
-
     private void OnEnable()
     {
-        Debug.Log("CAR ONENABLE");
-        purchase = PlayerPrefs.GetInt("_purchase" + carData.name) == 1;
-
-
-        garageUI.carsButton.onClick.Invoke();
-
-
-        if (purchase)
-        {
-            garageUI.carSelectButton.gameObject.SetActive(false);
-            garageUI.carLock.gameObject.SetActive(false);
-            garageUI.garageButton.interactable = true;
-        }
-        else
-        {
-            garageUI.carLock.gameObject.SetActive(true);
-            garageUI.garageButton.interactable = false;
-
-            garageUI.carPrice.text = carData.price.ToString();
-            garageUI.carSelectButton.gameObject.SetActive(true);
-            garageUI.carSelectButton.onClick.RemoveAllListeners();
-            garageUI.carSelectButton.onClick.AddListener(() => CarBuyEvent());
-            garageUI.carSelectButtonText.text = "BUY";
-        }
+        CarSelectButtonText();
 
         garageUI.carName.text = this.carData.name;
         properties = carData.properties.GetValues();
 
-
-        GetSavedParts();
-        UI_PartButtons();
-    }
-
-    void CarBuyEvent()
-    {
-        PlayerPrefs.SetInt("_purchase" + carData.name, 1);
-        garageUI.carSelectButton.gameObject.SetActive(false);
-        garageUI.carLock.gameObject.SetActive(false);
-        garageUI.garageButton.interactable = true;
-        PlayerPrefs.SetInt("CurrentCarIndex", transform.GetSiblingIndex());
-    }
-
-    private void OnDisable()
-    {
-        properties = carData.properties.GetValues();
-    }
-
-    void GetSavedParts()
-    {
-        Debug.Log("LOAD car saved PART s");
-
-        currentFBumper = PlayerPrefs.GetInt("CurrentPart" + carData.name + fBumperTransform);
-        currentBBumper = PlayerPrefs.GetInt("CurrentPart" + carData.name + bBumperTransform);
-        currentSides = PlayerPrefs.GetInt("CurrentPart" + carData.name + sidesTransform);
-        currentWindows = PlayerPrefs.GetInt("CurrentPart" + carData.name + windowsTransform);
-        currentCowling = PlayerPrefs.GetInt("CurrentPart" + carData.name + cowlingTransform);
-        currentRims = PlayerPrefs.GetInt("CurrentPart" + carData.name + rimsTransform);
+        garageUI.SpriteUpdate(fBumperTransform , garageUI.fbbSprite);
+        garageUI.SpriteUpdate(bBumperTransform , garageUI.bbbSprite);
+        garageUI.SpriteUpdate(sidesTransform , garageUI.sidesSprite);
+        garageUI.SpriteUpdate(windowsTransform , garageUI.windowsSprite);
+        garageUI.SpriteUpdate(cowlingTransform , garageUI.cowlingsSprite);
+        garageUI.SpriteUpdate(rimsTransform , garageUI.rimsSprite);
+        
+        UI_Property.Instance.UI_PropertiesUpdate(properties);
 
         fBumperTransform.GetChild(currentFBumper).gameObject.SetActive(true);
         bBumperTransform.GetChild(currentBBumper).gameObject.SetActive(true);
@@ -108,6 +61,8 @@ public class Car : MonoBehaviour
         windowsTransform.GetChild(currentWindows).gameObject.SetActive(true);
         cowlingTransform.GetChild(currentCowling).gameObject.SetActive(true);
         rimsTransform.GetChild(currentRims).gameObject.SetActive(true);
+
+        garageUI.fbbSprite.GetChild(currentFBumper+1).GetComponent<Button>().Select();
     }
 
     void BuyCar()
@@ -148,16 +103,9 @@ public class Car : MonoBehaviour
         }
     }
 
-  
-
-    void UI_PartButtons()
+    private void OnDisable()
     {
-        garageUI.SpriteUpdate(fBumperTransform, garageUI.fbbSprite);
-        garageUI.SpriteUpdate(bBumperTransform, garageUI.bbbSprite);
-        garageUI.SpriteUpdate(sidesTransform, garageUI.sidesSprite);
-        garageUI.SpriteUpdate(windowsTransform, garageUI.windowsSprite);
-        garageUI.SpriteUpdate(cowlingTransform, garageUI.cowlingsSprite);
-        garageUI.SpriteUpdate(rimsTransform, garageUI.rimsSprite);
+        properties = carData.properties;
     }
 
     public void SetIndex(Transform _transform , int index)
@@ -186,7 +134,6 @@ public class Car : MonoBehaviour
         {
             currentRims = index;
         }
-
         ChangeActivePart(_transform , index);
     }
 
