@@ -26,13 +26,13 @@ MonoBehaviour:
   itemPrefab: {fileID: 6551160594476470020, guid: 2056ace6afe9343479e7ff862f1fb40d, type: 3}
   partModel: {fileID: 4456142000247354008, guid: 4bf8201a0f95cbe41a2afcf07ee20886, type: 3}
   partTransform: 0
-  partTransformIndex: 0
+  partTransformIndex: 1
   partLevel: 2
   price: 0
   properties:
-    speed: 0
-    armor: 0
-    fuelTank: 0
-    zombieResist: 0
-    monsterDuration: 0
-    comboDuration: 0
+    speed: 7.5
+    armor: 7.5
+    fuelTank: 7.5
+    zombieResist: 7.5
+    monsterDuration: 0.75
+    comboDuration: 0.75
