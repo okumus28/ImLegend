@@ -36,7 +36,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 6551160594476470020, guid: 2056ace6afe9343479e7ff862f1fb40d, type: 3}
   partModel: {fileID: 4456142000247354008, guid: 4bf8201a0f95cbe41a2afcf07ee20886, type: 3}
   partTransform: 0
-  partTransformIndex: 2
+  partTransformIndex: 3
   partLevel: 2
   price: 0
   properties:
