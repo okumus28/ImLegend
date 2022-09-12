@@ -25,11 +25,6 @@ public class GarageUI : MonoBehaviour
 
     public Button firstSelect;
 
-<<<<<<< Updated upstream
-    [Header ("Car Selection")]
-    public Button carSelectButton;
-    public TextMeshProUGUI carSelectButtonText;
-=======
     [Header("Car Select UIS")]
     public Button carSelectButton;
     public TextMeshProUGUI carSelectButtonText;
@@ -42,7 +37,6 @@ public class GarageUI : MonoBehaviour
     public Button garageButton;
     public Button carsButton;
 
->>>>>>> Stashed changes
     private void Awake()
     {
         instance = this;

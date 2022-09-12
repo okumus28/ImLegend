@@ -28,7 +28,6 @@ public class Car : MonoBehaviour
 
     [SerializeField] GarageUI garageUI;
     public UI_Property uiProperty;
-    public bool purchase;
 
     private void Awake()
     {
@@ -39,19 +38,10 @@ public class Car : MonoBehaviour
         cowlingTransform = partTransformParent.GetChild(4);
         rimsTransform = partTransformParent.GetChild(5);
 
-<<<<<<< Updated upstream
         purchase = PlayerPrefs.GetInt(carData.carName + "purchase") == 1;
 
     }
-    private void OnEnable()
-    {
-        CarSelectButtonText();
-=======
-        purchase = PlayerPrefs.GetInt("_purchase" + carData.name) == 1;
 
-        Debug.Log("CAR AWAKE");
-        
-    }
     private void OnEnable()
     {
         Debug.Log("CAR ONENABLE");
@@ -78,7 +68,6 @@ public class Car : MonoBehaviour
             garageUI.carSelectButton.onClick.AddListener(() => CarBuyEvent());
             garageUI.carSelectButtonText.text = "BUY";
         }
->>>>>>> Stashed changes
 
         garageUI.carName.text = this.carData.name;
         properties = carData.properties.GetValues();
@@ -121,7 +110,6 @@ public class Car : MonoBehaviour
         rimsTransform.GetChild(currentRims).gameObject.SetActive(true);
     }
 
-<<<<<<< Updated upstream
     void BuyCar()
     {
         purchase = true;
@@ -160,10 +148,9 @@ public class Car : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-=======
+  
+
     void UI_PartButtons()
->>>>>>> Stashed changes
     {
         garageUI.SpriteUpdate(fBumperTransform, garageUI.fbbSprite);
         garageUI.SpriteUpdate(bBumperTransform, garageUI.bbbSprite);

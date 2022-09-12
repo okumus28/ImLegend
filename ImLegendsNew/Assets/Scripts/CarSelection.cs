@@ -33,14 +33,12 @@ public class CarSelection : MonoBehaviour
 
         if (previousButton == null)
             return;
-<<<<<<< Updated upstream
-=======
 
         if (transform.GetChild(currentCarIndex).GetComponent<Car>().purchase)
         {            
             PlayerPrefs.SetInt("CurrentCarIndex" , currentCarIndex);
         }
->>>>>>> Stashed changes
+
         previousButton.interactable = _index != 0;
         nextButton.interactable = _index != transform.childCount - 1;
 
@@ -51,10 +49,10 @@ public class CarSelection : MonoBehaviour
         transform.GetChild(currentCarIndex).gameObject.SetActive(false);
         currentCarIndex += _change;
         SelectedCar(currentCarIndex);
-<<<<<<< Updated upstream
+
         //PlayerPrefs.SetInt("CurrentCarIndex", currentCarIndex);
-=======
+
         //car = transform.GetChild(currentCarIndex).GetComponent<Car>();
->>>>>>> Stashed changes
+
     }
 }
