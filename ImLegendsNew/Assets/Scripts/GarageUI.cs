@@ -25,9 +25,24 @@ public class GarageUI : MonoBehaviour
 
     public Button firstSelect;
 
+<<<<<<< Updated upstream
     [Header ("Car Selection")]
     public Button carSelectButton;
     public TextMeshProUGUI carSelectButtonText;
+=======
+    [Header("Car Select UIS")]
+    public Button carSelectButton;
+    public TextMeshProUGUI carSelectButtonText;
+
+    public Image carLock;
+    public TextMeshProUGUI carPrice;
+
+    [Space(2)]
+
+    public Button garageButton;
+    public Button carsButton;
+
+>>>>>>> Stashed changes
     private void Awake()
     {
         instance = this;
@@ -38,19 +53,24 @@ public class GarageUI : MonoBehaviour
         firstSelect.interactable = false;
     }
 
+
+    // seçilen parça türüne göre parça sayýsýnca seçim butonlarý olusturulmasý
     public void SpriteUpdate(Transform _transformPart , Transform _transformSprites)
     {
-        for (int i = 1; i < _transformSprites.childCount; i++)
+        for (int i = 0; i < _transformSprites.childCount; i++)
         {
             Destroy(_transformSprites.GetChild(i).gameObject);
         }
-        _transformSprites.GetComponent<RectTransform>().sizeDelta = new Vector2(100 + (_transformPart.childCount * 105), 100);
+
+        _transformSprites.GetComponent<RectTransform>().sizeDelta = new Vector2((_transformPart.childCount * 105), 100);
+
         for (int i = 0; i < _transformPart.childCount; i++)
         {
             //GameObject g = Instantiate(spritePrefab, _transformSprites);
             spritePrefab.GetComponent<CarPartUI>().carPartData = _transformPart.GetChild(i).GetComponent<CarPart>().carPartData;
             spritePrefab.GetComponent<CarPartUI>().partCarTransform = _transformPart;
-            Instantiate(spritePrefab, _transformSprites);
+            Transform b= Instantiate(spritePrefab, _transformSprites).transform;
+            b.GetChild(1).gameObject.SetActive(_transformPart.GetChild(i).gameObject.activeSelf);
         }
     }
 

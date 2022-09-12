@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75ad66d291c2a645bc91696d28ece67, type: 3}
+  m_Name: Kiri86
+  m_EditorClassIdentifier: 
+  itemType: 2
+  _name: 
+  description: 
+  itemPrefab: {fileID: 6551160594476470020, guid: 2056ace6afe9343479e7ff862f1fb40d, type: 3}
+  carName: 
+  carLevel: 3
+  price: 12000
+  properties:
+    speed: 160
+    armor: 200
+    fuelTank: 80
+    zombieResist: 25
+    monsterDuration: 5
+    comboDuration: 5

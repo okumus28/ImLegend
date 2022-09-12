@@ -21,8 +21,8 @@ MonoBehaviour:
   price: 10000
   properties:
     speed: 100
-    armor: 20
-    fuelTank: 40
-    zombieResist: 0
-    monsterDuration: 2.5
-    comboDuration: 2
+    armor: 100
+    fuelTank: 10
+    zombieResist: 10
+    monsterDuration: 1
+    comboDuration: 1

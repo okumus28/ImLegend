@@ -21,18 +21,11 @@ public class UI_Property : MonoBehaviour
     public Image monsterDurationFillBar;
     public Image comboDurationFillBar;
 
-    public static UI_Property Instance { get; private set; }
+    public static UI_Property instance { get; private set; }
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
+        instance = this;
     }
 
     public void UI_PropertiesUpdate(Properties _prop)
@@ -51,5 +44,4 @@ public class UI_Property : MonoBehaviour
         monsterDurationFillBar.fillAmount = _prop.monsterDuration / 10;
         comboDurationFillBar.fillAmount = _prop.comboDuration / 10;
     }
-
 }

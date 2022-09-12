@@ -16,13 +16,17 @@ MonoBehaviour:
   _name: 
   description: 
   itemPrefab: {fileID: 6551160594476470020, guid: 2056ace6afe9343479e7ff862f1fb40d, type: 3}
+<<<<<<< Updated upstream
   carName: race
+=======
+  carName: 
+>>>>>>> Stashed changes
   carLevel: 3
   price: 25000
   properties:
-    speed: 200
-    armor: 75
-    fuelTank: 60
-    zombieResist: 20
-    monsterDuration: 5.1
-    comboDuration: 2
+    speed: 150
+    armor: 150
+    fuelTank: 15
+    zombieResist: 15
+    monsterDuration: 1.5
+    comboDuration: 1.5
