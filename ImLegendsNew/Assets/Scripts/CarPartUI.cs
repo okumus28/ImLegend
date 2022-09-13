@@ -11,27 +11,40 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
     Properties tempProp;
     int tempIndex;
 
-    UI_Property uý_Property;
+    UI_Property ui_Property;
+
+    [SerializeField]
+    bool purchase;
 
     private void OnEnable()
     {
-        //PlayerPrefs.SetInt(CarSelection.car.name + carPartData.name,0);
+        tempIndex = PlayerPrefs.GetInt("Current" + partCarTransform + CarSelection.car.carData.name);
+        purchase = PlayerPrefs.GetInt("_PurchasePart" + carPartData.name + CarSelection.car.carData.name) == 1;
+
+        Debug.Log(("_PurchasePart" + carPartData.name + CarSelection.car.carData.name));
+        Debug.Log(tempIndex + " " + purchase);
 
         //Kilit Resmi On/Off
-        if (PlayerPrefs.GetInt(CarSelection.car.name + carPartData.name) == 1)
+        if (purchase)
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
+        if (tempIndex == carPartData.partTransformIndex)
+        {
+            transform.GetChild(1).gameObject.SetActive(true);
+            GetComponent<Button>().Select();
+        }
 
-        uý_Property = UI_Property.Instance;
+        ui_Property = UI_Property.instance;
 
     }
 
     public void OnSelect(BaseEventData eventData)
     {
-        GetACtivePartIndex();
+        tempIndex = PlayerPrefs.GetInt("Current" + partCarTransform + CarSelection.car.carData.name);
+        purchase = PlayerPrefs.GetInt("_PurchasePart" + carPartData.name + CarSelection.car.carData.name) == 1;
 
-        if (PlayerPrefs.GetInt(CarSelection.car.name + carPartData.name) == 1)
+        if (purchase)
         {
             if (tempIndex == carPartData.partTransformIndex)
             {
@@ -63,30 +76,36 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
 
     public void EquipEvent()
     {
-        CarSelection.car.SetIndex(partCarTransform, carPartData.partTransformIndex);
+
+        for (int i = 0; i < transform.parent.childCount; i++)
+        {
+            transform.parent.GetChild(i).GetChild(1).gameObject.SetActive(false);
+        }
+        SelectedPart();
+        transform.GetChild(1).gameObject.SetActive(true);
+        PlayerPrefs.SetInt("Current" + partCarTransform + CarSelection.car.carData.name , carPartData.partTransformIndex);
         tempProp = CarSelection.car.properties.GetValues();
         GetComponent<Button>().Select();
     }
 
     public void BuyEvent()
     {
-        PlayerPrefs.SetInt(CarSelection.car.name + carPartData.name, 1);
+        PlayerPrefs.SetInt("_PurchasePart" + carPartData.name + CarSelection.car.carData.name, 1);
         transform.GetChild(0).gameObject.SetActive(false);
-        CarSelection.car.SetIndex(partCarTransform, carPartData.partTransformIndex);
-        tempProp = CarSelection.car.properties.GetValues();
-        GetComponent<Button>().Select();
+        EquipEvent();
     }
 
 
     void SelectedPart()
     {
         for (int i = 0; i < partCarTransform.childCount; i++)
-        {          
-            partCarTransform.GetChild(i).gameObject.SetActive(i == carPartData.partTransformIndex);
+        {   
+            partCarTransform.GetChild(i).gameObject.SetActive(false);
         }
+        partCarTransform.GetChild(carPartData.partTransformIndex).gameObject.SetActive(true);
     }
 
-    void GetACtivePartIndex()
+    void GetActivePartIndex()
     {
         tempIndex = 10;
 
@@ -106,80 +125,80 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
             partCarTransform.GetChild(i).gameObject.SetActive(i == tempIndex);
         }
 
-        uý_Property.speedFillBar.color = Color.blue;
-        uý_Property.armorFillBar.color = Color.blue;
-        uý_Property.fuelTankFillBar.color = Color.blue;
-        uý_Property.zombieResistFillBar.color = Color.blue;
-        uý_Property.monsterDurationFillBar.color = Color.blue;
-        uý_Property.comboDurationFillBar.color = Color.blue;
+        ui_Property.speedFillBar.color = Color.blue;
+        ui_Property.armorFillBar.color = Color.blue;
+        ui_Property.fuelTankFillBar.color = Color.blue;
+        ui_Property.zombieResistFillBar.color = Color.blue;
+        ui_Property.monsterDurationFillBar.color = Color.blue;
+        ui_Property.comboDurationFillBar.color = Color.blue;
     }
 
     void PropUpdate()
     {
         if (tempProp.speed < CarSelection.car.properties.speed)
         {
-            uý_Property.speedFillBar.color = Color.green;
-            uý_Property.speedText.text = tempProp.speed.ToString() + "+" + (CarSelection.car.properties.speed - tempProp.speed).ToString();
+            ui_Property.speedFillBar.color = Color.green;
+            ui_Property.speedText.text = tempProp.speed.ToString() + "+" + (CarSelection.car.properties.speed - tempProp.speed).ToString();
         }
         else if (tempProp.speed > CarSelection.car.properties.speed)
         {
-            uý_Property.speedFillBar.color = Color.red;
-            uý_Property.speedText.text = tempProp.speed.ToString() + "-" + (tempProp.speed - CarSelection.car.properties.speed).ToString();
+            ui_Property.speedFillBar.color = Color.red;
+            ui_Property.speedText.text = tempProp.speed.ToString() + "-" + (tempProp.speed - CarSelection.car.properties.speed).ToString();
         }
 
         if (tempProp.armor < CarSelection.car.properties.armor)
         {
-            uý_Property.armorFillBar.color = Color.green;
-            uý_Property.armorText.text = tempProp.armor.ToString() + "+" + (CarSelection.car.properties.armor - tempProp.armor).ToString();
+            ui_Property.armorFillBar.color = Color.green;
+            ui_Property.armorText.text = tempProp.armor.ToString() + "+" + (CarSelection.car.properties.armor - tempProp.armor).ToString();
         }
         else if (tempProp.armor > CarSelection.car.properties.armor)
         {
-            uý_Property.armorFillBar.color = Color.red;
-            uý_Property.armorText.text = tempProp.armor.ToString() + "-" + (tempProp.armor - CarSelection.car.properties.armor).ToString();
+            ui_Property.armorFillBar.color = Color.red;
+            ui_Property.armorText.text = tempProp.armor.ToString() + "-" + (tempProp.armor - CarSelection.car.properties.armor).ToString();
         }
 
         if (tempProp.fuelTank < CarSelection.car.properties.fuelTank)
         {
-            uý_Property.fuelTankFillBar.color = Color.green;
-            uý_Property.fuelTankText.text = tempProp.fuelTank.ToString() + "+" + (CarSelection.car.properties.fuelTank - tempProp.fuelTank).ToString();
+            ui_Property.fuelTankFillBar.color = Color.green;
+            ui_Property.fuelTankText.text = tempProp.fuelTank.ToString() + "+" + (CarSelection.car.properties.fuelTank - tempProp.fuelTank).ToString();
         }
         else if (tempProp.fuelTank > CarSelection.car.properties.fuelTank)
         {
-            uý_Property.fuelTankFillBar.color = Color.red;
-            uý_Property.fuelTankText.text = tempProp.fuelTank.ToString() + "-" + (tempProp.fuelTank - CarSelection.car.properties.fuelTank).ToString();
+            ui_Property.fuelTankFillBar.color = Color.red;
+            ui_Property.fuelTankText.text = tempProp.fuelTank.ToString() + "-" + (tempProp.fuelTank - CarSelection.car.properties.fuelTank).ToString();
         }
 
         if (tempProp.zombieResist < CarSelection.car.properties.zombieResist)
         {
-            uý_Property.zombieResistFillBar.color = Color.green;
-            uý_Property.zombieResistText.text = tempProp.zombieResist.ToString() + "+" + (CarSelection.car.properties.zombieResist - tempProp.zombieResist).ToString();
+            ui_Property.zombieResistFillBar.color = Color.green;
+            ui_Property.zombieResistText.text = tempProp.zombieResist.ToString() + "+" + (CarSelection.car.properties.zombieResist - tempProp.zombieResist).ToString();
         }
         else if (tempProp.zombieResist > CarSelection.car.properties.zombieResist)
         {
-            uý_Property.zombieResistFillBar.color = Color.red;
-            uý_Property.zombieResistText.text = tempProp.zombieResist.ToString() + "-" + (tempProp.zombieResist - CarSelection.car.properties.zombieResist).ToString();
+            ui_Property.zombieResistFillBar.color = Color.red;
+            ui_Property.zombieResistText.text = tempProp.zombieResist.ToString() + "-" + (tempProp.zombieResist - CarSelection.car.properties.zombieResist).ToString();
         }
 
         if (tempProp.monsterDuration < CarSelection.car.properties.monsterDuration)
         {
-            uý_Property.monsterDurationFillBar.color = Color.green;
-            uý_Property.monsterDurationText.text = tempProp.monsterDuration.ToString("f1") + "+" + (CarSelection.car.properties.monsterDuration - tempProp.monsterDuration).ToString("f1");
+            ui_Property.monsterDurationFillBar.color = Color.green;
+            ui_Property.monsterDurationText.text = tempProp.monsterDuration.ToString("f1") + "+" + (CarSelection.car.properties.monsterDuration - tempProp.monsterDuration).ToString("f1");
         }
         else if (tempProp.monsterDuration > CarSelection.car.properties.monsterDuration)
         {
-            uý_Property.monsterDurationFillBar.color = Color.red;
-            uý_Property.monsterDurationText.text = tempProp.monsterDuration.ToString("f1") + "-" + (tempProp.monsterDuration - CarSelection.car.properties.monsterDuration).ToString("f1");
+            ui_Property.monsterDurationFillBar.color = Color.red;
+            ui_Property.monsterDurationText.text = tempProp.monsterDuration.ToString("f1") + "-" + (tempProp.monsterDuration - CarSelection.car.properties.monsterDuration).ToString("f1");
         }
 
         if (tempProp.comboDuration < CarSelection.car.properties.comboDuration)
         {
-            uý_Property.comboDurationFillBar.color = Color.green;
-            uý_Property.comboDurationText.text = tempProp.comboDuration.ToString("f1") + "+" + (CarSelection.car.properties.comboDuration - tempProp.comboDuration).ToString("f1");
+            ui_Property.comboDurationFillBar.color = Color.green;
+            ui_Property.comboDurationText.text = tempProp.comboDuration.ToString("f1") + "+" + (CarSelection.car.properties.comboDuration - tempProp.comboDuration).ToString("f1");
         }
         else if (tempProp.comboDuration > CarSelection.car.properties.comboDuration)
         {
-            uý_Property.comboDurationFillBar.color = Color.red;
-            uý_Property.comboDurationText.text =tempProp.comboDuration.ToString("f1") + "-" + (tempProp.comboDuration - CarSelection.car.properties.comboDuration).ToString("f1");
+            ui_Property.comboDurationFillBar.color = Color.red;
+            ui_Property.comboDurationText.text =tempProp.comboDuration.ToString("f1") + "-" + (tempProp.comboDuration - CarSelection.car.properties.comboDuration).ToString("f1");
         }
     }
 }

@@ -28,6 +28,13 @@ public class GarageUI : MonoBehaviour
     [Header ("Car Selection")]
     public Button carSelectButton;
     public TextMeshProUGUI carSelectButtonText;
+
+    public Image carLock;
+    public TextMeshProUGUI carPrice;
+
+    public Button garageButton;
+    public Button carsButton;
+
     private void Awake()
     {
         instance = this;
@@ -40,11 +47,11 @@ public class GarageUI : MonoBehaviour
 
     public void SpriteUpdate(Transform _transformPart , Transform _transformSprites)
     {
-        for (int i = 1; i < _transformSprites.childCount; i++)
+        for (int i = 0; i < _transformSprites.childCount; i++)
         {
             Destroy(_transformSprites.GetChild(i).gameObject);
         }
-        _transformSprites.GetComponent<RectTransform>().sizeDelta = new Vector2(100 + (_transformPart.childCount * 105), 100);
+        _transformSprites.GetComponent<RectTransform>().sizeDelta = new Vector2((_transformPart.childCount * 105), 100);
         for (int i = 0; i < _transformPart.childCount; i++)
         {
             //GameObject g = Instantiate(spritePrefab, _transformSprites);

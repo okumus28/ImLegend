@@ -20,9 +20,9 @@ MonoBehaviour:
   carLevel: 2
   price: 10000
   properties:
-    speed: 100
-    armor: 20
-    fuelTank: 40
-    zombieResist: 0
-    monsterDuration: 2.5
-    comboDuration: 2
+    speed: 120
+    armor: 120
+    fuelTank: 12
+    zombieResist: 12
+    monsterDuration: 1.2
+    comboDuration: 1.2

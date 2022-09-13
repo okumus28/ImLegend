@@ -6,13 +6,14 @@ public class CarSelection : MonoBehaviour
     [SerializeField] Button previousButton;
     [SerializeField] Button nextButton;
 
-    public static int currentCarIndex;
+    int currentCarIndex;
 
     public static Car car;
 
     private void Awake()
     {
         currentCarIndex = PlayerPrefs.GetInt("CurrentCarIndex");
+        car = transform.GetChild(currentCarIndex).GetComponent<Car>();
         SelectedCar(currentCarIndex);
         Debug.Log(car.carData.carName);
         car.CarSelectButtonText();
@@ -20,12 +21,12 @@ public class CarSelection : MonoBehaviour
 
     void SelectedCar(int _index)
     {
+        car = transform.GetChild(_index).GetComponent<Car>();
+
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(i == _index);
         }
-
-        car = transform.GetChild(_index).GetComponent<Car>();
 
         if (previousButton == null)
             return;
@@ -36,8 +37,8 @@ public class CarSelection : MonoBehaviour
 
     public void ChangeCar(int _change)
     {
+        transform.GetChild(currentCarIndex).gameObject.SetActive(false);
         currentCarIndex += _change;
         SelectedCar(currentCarIndex);
-        //PlayerPrefs.SetInt("CurrentCarIndex", currentCarIndex);
     }
 }
