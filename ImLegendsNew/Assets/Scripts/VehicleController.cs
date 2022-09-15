@@ -4,7 +4,13 @@ using UnityEngine;
 public class VehicleController : MonoBehaviour
 {
     public float speed;
-    public float maxSpeed;
+    float maxSpeed;
+
+    public float currentArmor;
+    [SerializeField]float maxArmor;
+
+    public float currentFuel;
+    [SerializeField]float fuelTank;
 
     private float horizontalInput;
     [SerializeField]private float maxSteeringAngle;
@@ -27,12 +33,23 @@ public class VehicleController : MonoBehaviour
     [SerializeField]
     private Transform backRightTransform;
 
+    public Transform ibre;
+    public Transform armorIbre;
+    public Transform fuelIbre;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         //rb.centerOfMass = new Vector3(0,0,0);
         currentMotorForce = maxMotorForce;
+        maxSpeed = GameManager.instance.properties.speed;
+        maxArmor = GameManager.instance.properties.armor;
+        fuelTank = GameManager.instance.properties.fuelTank;
+
+        currentArmor = maxArmor;
+        currentFuel = fuelTank;
+
         rb.velocity = new Vector3(0,0,maxSpeed / 7.2f);
     }
     private void FixedUpdate()
@@ -48,6 +65,12 @@ public class VehicleController : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), .05f);
         }
 
+        currentArmor -= Time.fixedDeltaTime;
+        currentFuel -= Time.fixedDeltaTime;
+
+        armorIbre.localEulerAngles = new Vector3(0, 0, 75 + (300 - currentArmor));
+        fuelIbre.localEulerAngles = new Vector3(0, 0, 105 - ((100 - currentFuel) * 2.3f));
+
         GetInput();
         SpeedOmeter();
         HandleMotor();
@@ -59,19 +82,24 @@ public class VehicleController : MonoBehaviour
     }
     public void HandleMotor()
     {
-        if (speed >= maxSpeed)
+        if (currentArmor <= 0 || currentFuel <= 0)
         {
             currentMotorForce = 0;
+            rearLeftCollider.brakeTorque = 15000;
+            rearRightCollider.brakeTorque = 15000;
+        }
+        else if (speed >= maxSpeed)
+        {
+            currentMotorForce = 0;
+            Debug.Log("else if");
         }
         else
         {
             currentMotorForce = maxMotorForce;
         }
 
-        frontLeftCollider.motorTorque = currentMotorForce;
-        frontRightCollider.motorTorque = currentMotorForce;
-
-        Debug.Log(currentMotorForce);
+        rearLeftCollider.motorTorque = currentMotorForce;
+        rearRightCollider.motorTorque = currentMotorForce;
 
     }
 
@@ -91,6 +119,7 @@ public class VehicleController : MonoBehaviour
     {
         var vel = rb.velocity;
         speed = vel.magnitude * 3.6f;
+        ibre.localEulerAngles = new Vector3(0, 0, 270 - (speed * 0.9f));
     }
 
     void UpdateWheels()
@@ -111,5 +140,13 @@ public class VehicleController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("RoadTag"))
+        {
+            RoadController.instance.RoadCreate();
+        }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Car : MonoBehaviour
@@ -42,26 +43,52 @@ public class Car : MonoBehaviour
     }
     private void OnEnable()
     {
-        purchase = PlayerPrefs.GetInt("_purchase" + carData.name) == 1;
-
-        if (purchase)
+        if (SceneManager.GetActiveScene().name == "GarageScene 1")
         {
-            Debug.Log("purchase ");
-            PlayerPrefs.SetInt("CurrentCarIndex", transform.GetSiblingIndex());
+            purchase = PlayerPrefs.GetInt("_purchase" + carData.name) == 1;
+
+            if (purchase)
+            {
+                Debug.Log("purchase ");
+                PlayerPrefs.SetInt("CurrentCarIndex", transform.GetSiblingIndex());
+            }
+
+            garageUI.carsButton.onClick.Invoke();
+
+            CarSelectButtonText();
+
+            garageUI.carName.text = this.carData.name;
+
+            //uiProperty.UI_PropertiesUpdate(this.properties);
+
+            UpdatePartsUIButtons();
         }
-
-        garageUI.carsButton.onClick.Invoke();
-
-        CarSelectButtonText();
-
-        garageUI.carName.text = this.carData.name;
-        properties = carData.properties.GetValues();
-
-        //uiProperty.UI_PropertiesUpdate(this.properties);
-
-        UpdatePartsUIButtons();
+            properties = carData.properties.GetValues();
         GetCurrentParts();
     }
+    //private void OnEnable()
+    //{
+    //    purchase = PlayerPrefs.GetInt("_purchase" + carData.name) == 1;
+
+
+    //    if (purchase)
+    //    {
+    //        Debug.Log("purchase ");
+    //        PlayerPrefs.SetInt("CurrentCarIndex", transform.GetSiblingIndex());
+    //    }
+
+    //    garageUI.carsButton.onClick.Invoke();
+
+    //    CarSelectButtonText();
+
+    //    garageUI.carName.text = this.carData.name;
+    //    properties = carData.properties.GetValues();
+
+    //    //uiProperty.UI_PropertiesUpdate(this.properties);
+
+    //    UpdatePartsUIButtons();
+    //    GetCurrentParts();
+    //}
 
     void UpdatePartsUIButtons()
     {
@@ -73,7 +100,7 @@ public class Car : MonoBehaviour
         garageUI.SpriteUpdate(rimsTransform, garageUI.rimsSprite);
     }
 
-    void GetCurrentParts()
+    public void GetCurrentParts()
     {
         currentFBumper = PlayerPrefs.GetInt("Current" + fBumperTransform + carData.name);
         currentBBumper = PlayerPrefs.GetInt("Current" + bBumperTransform + carData.name);

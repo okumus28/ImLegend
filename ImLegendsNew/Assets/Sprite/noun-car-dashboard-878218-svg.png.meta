@@ -1,0 +1,368 @@
+fileFormatVersion: 2
+guid: 59e8a4b08097db74d8dcaf6aa3d12730
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: main
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 295
+        width: 350
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7659ef65d2a6c8840971470405176a03
+      internalID: -2047283226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "i\xE7sol"
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 229
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb185d1f75ecea48aa14e553e36f671
+      internalID: 1912315958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-car-dashboard-878218-svg_32
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 183
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5209c0695c1744b9b756e1bb150338
+      internalID: -2120382118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ibre b\xFCy\xFCk"
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 180
+        width: 14
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7762aae477648241a12df2d48baa1ed
+      internalID: 1299776076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "ibre k\xFC\xE7\xFCk"
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 181
+        width: 14
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d25d8566ae0ad4c9e8de057c2c030d
+      internalID: 983049010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "i\xE7sa\u011F"
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 276
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14f07d8ff655cd46bf11b876ae739fc
+      internalID: 2016055659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 182
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b8bc01e4c830048aab4dfb3a05c9a5
+      internalID: 38195502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kutu
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 225
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57772be7c8ee2eb4cb7f66bddca7b98f
+      internalID: -1778253076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 62eed56ee3ab40f46baebf18694cbf0b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      noun-car-dashboard-878218-svg_7: -612644832
+      noun-car-dashboard-878218-svg_35: 1430828867
+      top: 38195502
+      noun-car-dashboard-878218-svg_11: 2028102180
+      noun-car-dashboard-878218-svg_4: -280440452
+      noun-car-dashboard-878218-svg_8: -571602644
+      noun-car-dashboard-878218-svg_15: 390995199
+      noun-car-dashboard-878218-svg_14: -1023343651
+      noun-car-dashboard-878218-svg_36: 88463770
+      noun-car-dashboard-878218-svg_28: -276490111
+      noun-car-dashboard-878218-svg_25: 801405539
+      noun-car-dashboard-878218-svg_22: -1380761074
+      noun-car-dashboard-878218-svg_39: 1029344469
+      noun-car-dashboard-878218-svg_32: -2120382118
+      noun-car-dashboard-878218-svg_13: 1004851544
+      noun-car-dashboard-878218-svg_27: -55060682
+      noun-car-dashboard-878218-svg_37: 1438516322
+      "i\xE7sol": 1912315958
+      noun-car-dashboard-878218-svg_10: -1309484509
+      noun-car-dashboard-878218-svg_20: 602543007
+      "i\xE7sa\u011F": 2016055659
+      "ibre b\xFCy\xFCk": 1299776076
+      noun-car-dashboard-878218-svg_3: -1264809109
+      noun-car-dashboard-878218-svg_9: -1299499020
+      noun-car-dashboard-878218-svg_1: -1976843520
+      noun-car-dashboard-878218-svg_19: -1684263977
+      noun-car-dashboard-878218-svg_21: 1724258706
+      noun-car-dashboard-878218-svg_2: -1908465297
+      noun-car-dashboard-878218-svg_30: -270668959
+      noun-car-dashboard-878218-svg_12: 1646244868
+      main: -2047283226
+      noun-car-dashboard-878218-svg_38: -1913428390
+      noun-car-dashboard-878218-svg_6: 561643366
+      noun-car-dashboard-878218-svg_24: 492961130
+      kutu: -1778253076
+      noun-car-dashboard-878218-svg_29: 168128730
+      noun-car-dashboard-878218-svg_16: 1559628248
+      "ibre k\xFC\xE7\xFCk": 983049010
+      noun-car-dashboard-878218-svg_23: -105863142
+      noun-car-dashboard-878218-svg_18: -1589212639
+      noun-car-dashboard-878218-svg_17: -1519599813
+      noun-car-dashboard-878218-svg_31: 1444120407
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

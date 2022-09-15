@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CarSelection : MonoBehaviour
@@ -16,7 +17,8 @@ public class CarSelection : MonoBehaviour
         car = transform.GetChild(currentCarIndex).GetComponent<Car>();
         SelectedCar(currentCarIndex);
         Debug.Log(car.carData.carName);
-        car.CarSelectButtonText();
+        if (SceneManager.GetActiveScene().name == "GarageScene 1")
+            car.CarSelectButtonText();
     }
 
     void SelectedCar(int _index)

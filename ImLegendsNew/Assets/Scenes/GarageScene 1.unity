@@ -17964,6 +17964,18 @@ PrefabInstance:
       propertyPath: uiProperty
       value: 
       objectReference: {fileID: 980792539}
+    - target: {fileID: 1228924331399798718, guid: 225f79378c223ac488f9fa7a2db27fc6, type: 3}
+      propertyPath: m_Name
+      value: Cowlings
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167533980044821080, guid: 225f79378c223ac488f9fa7a2db27fc6, type: 3}
+      propertyPath: m_Name
+      value: BBumpers
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748277843226136198, guid: 225f79378c223ac488f9fa7a2db27fc6, type: 3}
+      propertyPath: m_Name
+      value: FBumpers
+      objectReference: {fileID: 0}
     - target: {fileID: 6204348697781024772, guid: 225f79378c223ac488f9fa7a2db27fc6, type: 3}
       propertyPath: m_Name
       value: kiri86

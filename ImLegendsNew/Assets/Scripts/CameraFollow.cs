@@ -9,9 +9,12 @@ public class CameraFollow : MonoBehaviour
     public float heightOffset = 3.0f;
     public float cameraDelay = 0.02f;
 
+    [SerializeField]Vector3 offset;
+
     private void Start()
     {
         //target = PlayerBase.GetComponent<PlayerBase>().vehicleController.transform;
+        offset = transform.position;
     }
     // Update is called once per frame
     void Update()
@@ -20,6 +23,6 @@ public class CameraFollow : MonoBehaviour
 
         followPos.y += heightOffset;
 
-        transform.position = new Vector3(0, 3.5f, target.position.z - 10f);
+        transform.position = new Vector3(0, offset.y, target.position.z + offset.z);
     }
 }
