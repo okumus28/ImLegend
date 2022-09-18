@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class VehicleController : MonoBehaviour
 {
-    public float speed;
+    public float currentSpeed;
     float maxSpeed;
 
     public float currentArmor;
@@ -14,6 +14,7 @@ public class VehicleController : MonoBehaviour
 
     private float horizontalInput;
     [SerializeField]private float maxSteeringAngle;
+    public float currentSteeringAngle;
 
     public float maxMotorForce;
     private float currentMotorForce;
@@ -37,11 +38,13 @@ public class VehicleController : MonoBehaviour
     public Transform armorIbre;
     public Transform fuelIbre;
 
+    int killedZombi;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //rb.centerOfMass = new Vector3(0,0,0);
+        rb.centerOfMass = new Vector3(0,0,0);
         currentMotorForce = maxMotorForce;
         maxSpeed = GameManager.instance.properties.speed;
         maxArmor = GameManager.instance.properties.armor;
@@ -50,53 +53,63 @@ public class VehicleController : MonoBehaviour
         currentArmor = maxArmor;
         currentFuel = fuelTank;
 
-        rb.velocity = new Vector3(0,0,maxSpeed / 7.2f);
+        //rb.velocity = new Vector3(0,0,maxSpeed / 7.2f);
     }
     private void FixedUpdate()
     {
         float yAngle = transform.eulerAngles.y * 100;
 
-        if (horizontalInput == 0 && yAngle > .25f)
+        //if (horizontalInput == 0 && yAngle > .25f)
+        //{
+        //    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), .05f);
+        //}
+        //else if (horizontalInput == 0 && yAngle < -.25f)
+        //{
+        //    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), .05f);
+        //}
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), .05f);
-        }
-        else if (horizontalInput == 0 && yAngle < -.25f)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 0), .05f);
+            killedZombi++;
         }
 
-        currentArmor -= Time.fixedDeltaTime;
-        currentFuel -= Time.fixedDeltaTime;
-
-        armorIbre.localEulerAngles = new Vector3(0, 0, 75 + (300 - currentArmor));
-        fuelIbre.localEulerAngles = new Vector3(0, 0, 105 - ((100 - currentFuel) * 2.3f));
+        GameManager.instance.ArmorMeter(currentArmor);
+        GameManager.instance.FuelMeter(currentFuel);
+        GameManager.instance.DistanceCal(transform.position.z);
+        GameManager.instance.MonsterMode(killedZombi);
 
         GetInput();
+        //Deneme();
         SpeedOmeter();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
-        //Deneme();
-
-        //Debug.Log((frontLeftCollider.rpm / 60 * 360 * Time.deltaTime, 0, 90));
     }
     public void HandleMotor()
     {
         if (currentArmor <= 0 || currentFuel <= 0)
         {
             currentMotorForce = 0;
-            rearLeftCollider.brakeTorque = 15000;
-            rearRightCollider.brakeTorque = 15000;
+            rb.velocity *= .975f;
+            rearLeftCollider.brakeTorque = 5000;
+            rearRightCollider.brakeTorque = 5000;
+            frontLeftCollider.brakeTorque = 5000;
+            frontRightCollider.brakeTorque = 5000;
+
+            return;
         }
-        else if (speed >= maxSpeed)
+        else if (currentSpeed >= maxSpeed)
         {
             currentMotorForce = 0;
-            Debug.Log("else if");
         }
         else
         {
             currentMotorForce = maxMotorForce;
         }
+
+        currentArmor -= Time.fixedDeltaTime;
+        currentFuel -= Time.fixedDeltaTime;
 
         rearLeftCollider.motorTorque = currentMotorForce;
         rearRightCollider.motorTorque = currentMotorForce;
@@ -106,20 +119,27 @@ public class VehicleController : MonoBehaviour
     private void GetInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        //horizontalInput = Input.GetAxis("Horizontal");
+    }
+
+    public void Deneme()
+    {
+        transform.position += new Vector3(horizontalInput / 5, 0, 0);
     }
 
     private void HandleSteering()
     {
-        float currentSteerAngle = maxSteeringAngle * horizontalInput;
-        frontLeftCollider.steerAngle = currentSteerAngle;
-        frontRightCollider.steerAngle = currentSteerAngle;
+        //float currentSteerAngle = maxSteeringAngle * horizontalInput;
+        currentSteeringAngle = maxSteeringAngle * horizontalInput;
+        frontLeftCollider.steerAngle = currentSteeringAngle;
+        frontRightCollider.steerAngle = currentSteeringAngle;
     }
 
     private void SpeedOmeter()
     {
         var vel = rb.velocity;
-        speed = vel.magnitude * 3.6f;
-        ibre.localEulerAngles = new Vector3(0, 0, 270 - (speed * 0.9f));
+        currentSpeed = vel.magnitude * 3.6f;
+        GameManager.instance.SpeedoMeter(currentSpeed);
     }
 
     void UpdateWheels()
@@ -131,8 +151,7 @@ public class VehicleController : MonoBehaviour
     }
 
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
-    {
-        
+    {        
         Vector3 pos;
         Quaternion rot;
         wheelCollider.GetWorldPose(out pos , out rot);

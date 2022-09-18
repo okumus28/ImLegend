@@ -18,6 +18,6 @@ public class RoadController : MonoBehaviour
     {
         GameObject road = Instantiate(roads[Random.Range(0, roads.Length)], firstRoad.position + new Vector3(0, 0, 160) , Quaternion.identity , transform);
         firstRoad = road.transform;
-        Destroy(transform.GetChild(0).gameObject, 1.5f);
+        Destroy(transform.GetChild(0).gameObject, 1f);
     }
 }
