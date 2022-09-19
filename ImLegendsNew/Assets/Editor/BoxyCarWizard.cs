@@ -56,6 +56,6 @@ class BoxyCarWizard : EditorWindow {
 		}
 
 		root.AddComponent<EasySuspension>();
-		root.AddComponent<RearWheelDrive>();
+		root.AddComponent<CarController>();
 	}
 }

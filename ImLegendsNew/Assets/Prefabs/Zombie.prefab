@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blood: 5
+  damage: 7
   boundsCollider: {fileID: 0}
   offsetY: 1
   speed: 0.1

@@ -22,9 +22,10 @@ public class Road : MonoBehaviour
 
     void CreateItem(int index)
     {
-        if (Random.Range(0, 100) <= 20)
+        if (Random.Range(0, 100) <= 40)
         {
-            Instantiate(items[Random.Range(0, items.Length - 1)], RandomizePosition(spawnBounds.GetChild(index), 1.5f), Quaternion.identity, transform);
+            int random = Random.Range(0, items.Length);
+            Instantiate(items[random], RandomizePosition(spawnBounds.GetChild(index), 2f), Quaternion.identity, transform);
         }
     }
 
@@ -32,7 +33,7 @@ public class Road : MonoBehaviour
     {
         for (int i = 0; i < Random.Range(0, 2); i++)
         {
-            Instantiate(obstacles[Random.Range(0, obstacles.Length - 1)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.identity, transform);
+            Instantiate(obstacles[Random.Range(0, obstacles.Length)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.identity, transform);
         }
     }
 
@@ -40,7 +41,7 @@ public class Road : MonoBehaviour
     {
         for (int i = 0; i < Random.Range(0, 5); i++)
         {
-            Zombie zombie = Instantiate(zombies[Random.Range(0, obstacles.Length - 1)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.identity, transform).GetComponent<Zombie>();
+            Zombie zombie = Instantiate(zombies[Random.Range(0, zombies.Length)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.identity, transform).GetComponent<Zombie>();
             zombie.boundsCollider = spawnBounds.GetChild(index).GetComponent<BoxCollider>();
         }
     }

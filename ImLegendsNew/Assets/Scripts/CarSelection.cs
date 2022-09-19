@@ -16,7 +16,6 @@ public class CarSelection : MonoBehaviour
         currentCarIndex = PlayerPrefs.GetInt("CurrentCarIndex");
         car = transform.GetChild(currentCarIndex).GetComponent<Car>();
         SelectedCar(currentCarIndex);
-        Debug.Log(car.carData.carName);
         if (SceneManager.GetActiveScene().name == "GarageScene 1")
             car.CarSelectButtonText();
     }

@@ -2,15 +2,16 @@
 using System.Collections;
 using Unity.VisualScripting;
 
-public class RearWheelDrive : MonoBehaviour {
+public class CarController : MonoBehaviour {
 
 	public enum WheelDrive
 	{
-		twoWD,
+		frontWD,
+		backWD,
 		fourWD,
 	}
 
-	public WheelDrive wheelDrive;
+	//public WheelDrive wheelDrive;
 	private Rigidbody rb;
 
 	[Header("Wheels")]
@@ -31,10 +32,10 @@ public class RearWheelDrive : MonoBehaviour {
 	[SerializeField]private float maxSpeed;
 	public float currentSpeed;
 
-    private float maxArmor;
+	[System.NonSerialized] public float maxArmor;
 	public float currentArmor;
 
-    private float maxFuel;
+    [System.NonSerialized] public float maxFuel;
 	public float currentFuel;
 
 	//private WheelCollider[] wheels;
@@ -69,9 +70,13 @@ public class RearWheelDrive : MonoBehaviour {
 
 	public void Update()
 	{
+		ApplyBrake();
+		if (GameManager.instance.gameOver)
+		{			
+			return;
+		}
 		GetInput();
 		HandleMotor();
-		ApplyBrake();
 		SteeringAngle();
 		DashBoard();
 	}
@@ -112,8 +117,8 @@ public class RearWheelDrive : MonoBehaviour {
 			//return;
 		}
 
-		currentArmor -= Time.fixedDeltaTime;
-		currentFuel -= Time.fixedDeltaTime;
+		//currentArmor -= Time.fixedDeltaTime;
+		currentFuel -= Time.fixedDeltaTime / 1.5f;
 
 
 		backRightCollider.motorTorque = currentMotorForce;
@@ -142,9 +147,18 @@ public class RearWheelDrive : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		if (currentSpeed <= 0)
+		Invoke(nameof(ObstacleTrigger), .5f);
+	}
+
+	void ObstacleTrigger()
+	{
+		if (currentSpeed <= 5)
 		{
-			print("ÖLDÜNNN");
+			currentArmor = 0;	
+		}
+		else
+		{
+			currentArmor -= currentSpeed / 4;
 		}
 	}
 }

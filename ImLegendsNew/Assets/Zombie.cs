@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    [SerializeField]float blood;
+    [SerializeField] float blood;
+    [SerializeField] float damage;
     Vector3 target;
     public BoxCollider boundsCollider;
 
@@ -34,6 +35,7 @@ public class Zombie : MonoBehaviour
         {
             GameManager.instance.KilledZombi(1);
             GameManager.instance.MonsterMode(Random.Range(blood - 2, blood + 5));
+            other.GetComponent<CarController>().currentArmor -= Random.Range(damage - 3, damage + 3);
             Destroy(gameObject);
         }
     }
