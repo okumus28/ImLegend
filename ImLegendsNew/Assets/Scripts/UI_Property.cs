@@ -37,6 +37,9 @@ public class UI_Property : MonoBehaviour
         monsterDurationText.text = _prop.monsterDuration.ToString();
         comboDurationText.text = _prop.comboDuration.ToString();
 
+        if (speedFillBar == null)
+            return;
+
         speedFillBar.fillAmount = _prop.speed / 300;
         armorFillBar.fillAmount = _prop.armor / 300;
         fuelTankFillBar.fillAmount = _prop.fuelTank / 200;

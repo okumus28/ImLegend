@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GarageUI : MonoBehaviour
@@ -63,6 +64,6 @@ public class GarageUI : MonoBehaviour
 
     public void LetsGoButton()
     {
-
+        SceneManager.LoadScene(1);
     }
 }

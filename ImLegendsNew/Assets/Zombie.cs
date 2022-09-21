@@ -34,8 +34,14 @@ public class Zombie : MonoBehaviour
         if (other.CompareTag("Car"))
         {
             GameManager.instance.KilledZombi(1);
-            GameManager.instance.MonsterMode(Random.Range(blood - 2, blood + 5));
+            GameManager.instance.MonsterModeMeter(Random.Range(blood - 2, blood + 5));
             other.GetComponent<CarController>().currentArmor -= Random.Range(damage - 3, damage + 3);
+            Destroy(gameObject);
+        }
+        
+        if (other.CompareTag("Monster"))
+        {
+            GameManager.instance.KilledZombi(1);
             Destroy(gameObject);
         }
     }

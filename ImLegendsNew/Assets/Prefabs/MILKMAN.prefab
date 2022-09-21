@@ -176,9 +176,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5301701661210245590}
   - component: {fileID: 6020465226283576296}
+  - component: {fileID: 8653801969995457279}
   m_Layer: 0
   m_Name: MILKMAN
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,6 +219,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.0346065, y: 2.5448527, z: 2.8472214}
   m_Center: {x: 1.2283714, y: 2.122837, z: 0.23622513}
+--- !u!114 &8653801969995457279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816807878263874412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8ff899e6d5a6540bde78a23b9a37db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5278314459088365139
 GameObject:
   m_ObjectHideFlags: 0

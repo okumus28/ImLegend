@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Drawing;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Color = UnityEngine.Color;
 
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Image monsterMeter;
     [SerializeField] Image monsterMeter2;
+    [SerializeField] Image monsterMeter3;
+    [SerializeField] Button monsterModeStartButton;
 
     public int killedZombi;
     public float blood;
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     public int cash;
 
+
     [Header("GameOverPanel")]
     public GameObject gameOverPanel;
     [SerializeField] TextMeshProUGUI scoreText;
@@ -47,6 +52,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI defaultCashText;
 
     public bool gameOver;
+    public bool monsterMode;
+
+    private float timeElapsed;
+    private float lerpDuration;
+
+    public int horizontalInput;
+    public bool isBreaking;
 
     private void Awake()
     {
@@ -60,6 +72,29 @@ public class GameManager : MonoBehaviour
         properties = currentCar.properties;
         KilledZombi(0);
         Point(0);
+        MonsterModeMeter(0);        
+    }
+
+    private void Update()
+    {
+        if (monsterMode)
+        {
+            timeElapsed += Time.deltaTime / lerpDuration;
+            blood = Mathf.Lerp(99, 0, timeElapsed);
+
+            //if (timeElapsed < lerpDuration)
+            //{
+            //    Debug.Log(timeElapsed / lerpDuration);
+            //    blood = Mathf.Lerp(blood, 0, timeElapsed / lerpDuration);
+
+            monsterMeter.fillAmount = (float)blood / 100;
+            monsterMeter2.fillAmount = (float)blood / 100;
+            monsterMeter3.fillAmount = (float)blood / 100;
+
+            //    timeElapsed += Time.deltaTime;
+            //    //timeElapsed /= 1.3f;
+            //}
+        }
     }
 
     public void SpeedoMeter(float currentSpeed)
@@ -102,11 +137,17 @@ public class GameManager : MonoBehaviour
 
         distanceText.text = (distance / 1000).ToString("f2") + " km";
     }
-    public void MonsterMode(float b)
+
+    public void MonsterModeMeter(float b)
     {
         this.blood += b;
+
+        monsterModeStartButton.GetComponent<Button>().enabled = blood >= 100;
+
         monsterMeter.fillAmount = (float)blood / 100;
         monsterMeter2.fillAmount = (float)blood / 100;
+        monsterMeter3.fillAmount = (float)blood / 100;
+
     }
 
     public void KilledZombi(int k)
@@ -130,11 +171,47 @@ public class GameManager : MonoBehaviour
         print("game over");
         gameOverPanel.SetActive(true);
         defaultCashText.text = cash.ToString();
-        int c = (int)(point * 0.25f);
+
+        int c = (int)(point * 0.1f) + (killedZombi * 10) + (int)distance / 10;
+
         cash += c;
         cashText.text = c.ToString();
         PlayerPrefs.SetInt("PlayerCash" , cash);
         scoreText.text = point.ToString();
         Time.timeScale = 0;
+    }
+
+    public void LoadScene(int index)
+    {
+        SceneManager.LoadScene(index);
+        Time.timeScale = 1;
+    }
+
+    public void SettingsButton()
+    {
+        Debug.Log("SETTÝNGS ON");
+    }
+
+    public void MonsterModeSTartButton()
+    {
+        if (blood >= 100)
+        {
+            timeElapsed = 0;
+            lerpDuration = properties.monsterDuration;
+            monsterMode = true;
+            blood = 99;
+            currentCar.GetComponent<CarController>().StartCoroutine("MMM");
+            monsterModeStartButton.GetComponent<Button>().enabled = false;
+        }
+    }
+
+    public void SetHorizontalInput(int axis)
+    {
+        horizontalInput = axis;
+    }
+
+    public void SetBreakingInput(bool isBreaking)
+    {
+        this.isBreaking = isBreaking;
     }
 }

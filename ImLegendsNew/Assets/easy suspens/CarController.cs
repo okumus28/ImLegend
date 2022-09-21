@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour {
 
@@ -48,7 +49,15 @@ public class CarController : MonoBehaviour {
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody>();
-	}
+
+		GetComponent<AudioSource>().enabled = !(SceneManager.GetActiveScene().name == "GameScene");
+		GetComponent<CarAnimation>().enabled = !(SceneManager.GetActiveScene().name == "GameScene");
+		frontLeftCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
+        frontRightCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
+		backLeftCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
+		backRightCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
+        enabled = SceneManager.GetActiveScene().name == "GameScene";
+    }
 	// here we find all the WheelColliders down in the hierarchy
 	public void Start()
 	{
@@ -75,6 +84,7 @@ public class CarController : MonoBehaviour {
 		{			
 			return;
 		}
+
 		GetInput();
 		HandleMotor();
 		SteeringAngle();
@@ -85,6 +95,9 @@ public class CarController : MonoBehaviour {
 	{
         currentSpeed = rb.velocity.magnitude * 3.6f;
 
+		//print("magnitude"+rb.velocity.magnitude);
+		//print("velocity"+rb.velocity);
+
         GameManager.instance.ArmorMeter(currentArmor);
         GameManager.instance.FuelMeter(currentFuel);
         GameManager.instance.DistanceCal(transform.position.z);
@@ -94,17 +107,20 @@ public class CarController : MonoBehaviour {
 
 	void GetInput()
 	{
-		horizontalInput = Input.GetAxisRaw("Horizontal");
-		horizontalInput *= isBreaking ? -1 : 1;
-		
+		//horizontalInput = Input.GetAxisRaw("Horizontal");
+		horizontalInput = GameManager.instance.horizontalInput;
+		horizontalInput *= isBreaking ? -1 : 1;		
 
         transform.rotation = horizontalInput == 0 ? Quaternion.RotateTowards(transform.rotation, new Quaternion(0, 0, 0, 1), 10 * Time.deltaTime) : transform.rotation;
 
-		isBreaking = Input.GetKey(KeyCode.Space);
+
+		isBreaking = Input.GetKey(KeyCode.Space) && currentSpeed >= 30;
+		isBreaking = GameManager.instance.isBreaking && currentSpeed >= 30;
     }
     void HandleMotor()
 	{
 		currentMotorForce = currentSpeed >= maxSpeed ? 0 : motorForce;
+		//currentMotorForce = motorForce;
 
 		if (currentArmor <= 0 || currentFuel <= 0)
 		{
@@ -145,10 +161,21 @@ public class CarController : MonoBehaviour {
 		frontRightCollider.steerAngle = currentAngle;
 	}
 
-	void OnCollisionEnter(Collision other)
+	void OnCollisionStay(Collision other)
 	{
-		Invoke(nameof(ObstacleTrigger), .5f);
-	}
+		if (other.collider.CompareTag("Obstacle"))
+		{
+			Debug.Log(other.collider.name);
+			if (currentSpeed <= 5)
+			{
+				currentArmor = 0;
+			}
+			else
+			{
+				currentArmor -= currentSpeed / 4;
+			}
+		}
+    }
 
 	void ObstacleTrigger()
 	{
@@ -160,5 +187,44 @@ public class CarController : MonoBehaviour {
 		{
 			currentArmor -= currentSpeed / 4;
 		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+        if (other.CompareTag("RoadTag"))
+        {
+            RoadController.instance.RoadCreate();
+        }
+
+		if (other.CompareTag("Obstacle"))
+		{
+			Destroy(other.gameObject);
+		}
+	}
+
+	public IEnumerator	MMM()
+	{
+		transform.tag = "Monster";
+		//GetComponent<BoxCollider>().isTrigger = true;
+		rb.velocity = Vector3.zero;
+		rb.velocity = new Vector3(0, 0, maxSpeed / 2f);
+		maxSpeed *= 2;
+
+		print("basladı");
+
+		yield return new WaitForSeconds(GameManager.instance.properties.monsterDuration);
+
+        print("bitti");
+
+        transform.tag = "Car";
+		GameManager.instance.monsterMode = false;
+        GetComponent<BoxCollider>().isTrigger = false;
+		maxSpeed = GameManager.instance.properties.speed;
+		rb.velocity = new Vector3(0, 0, maxSpeed / 3.6f);
+		StopCoroutine(nameof(MMM));
+    }
+	public void MonsterMode()
+	{
+		transform.tag = "Monster";
 	}
 }

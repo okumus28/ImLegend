@@ -31,7 +31,7 @@ public class Road : MonoBehaviour
 
     void CreateObstacle(int index)
     {
-        for (int i = 0; i < Random.Range(0, 2); i++)
+        for (int i = 0; obstacles.Length > 0 && i < Random.Range(0, 2); i++) 
         {
             Instantiate(obstacles[Random.Range(0, obstacles.Length)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.identity, transform);
         }
@@ -39,7 +39,7 @@ public class Road : MonoBehaviour
 
     void CreateZombi(int index)
     {
-        for (int i = 0; i < Random.Range(0, 5); i++)
+        for (int i = 0; zombies.Length > 0 && i < Random.Range(0, 5); i++)
         {
             Zombie zombie = Instantiate(zombies[Random.Range(0, zombies.Length)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.identity, transform).GetComponent<Zombie>();
             zombie.boundsCollider = spawnBounds.GetChild(index).GetComponent<BoxCollider>();

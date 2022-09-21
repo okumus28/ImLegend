@@ -77,7 +77,7 @@ public class VehicleController : MonoBehaviour
         GameManager.instance.ArmorMeter(currentArmor);
         GameManager.instance.FuelMeter(currentFuel);
         GameManager.instance.DistanceCal(transform.position.z);
-        GameManager.instance.MonsterMode(killedZombi);
+        GameManager.instance.MonsterModeMeter(killedZombi);
 
         GetInput();
         //Deneme();
