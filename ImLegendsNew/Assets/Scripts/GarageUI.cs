@@ -36,14 +36,24 @@ public class GarageUI : MonoBehaviour
     public Button garageButton;
     public Button carsButton;
 
+    public TextMeshProUGUI cashText;
+    public TextMeshProUGUI goldText;
+
+    public int cash;
+    public int gold;
+
     private void Awake()
     {
         instance = this;
+        cash = PlayerPrefs.GetInt("PlayerCash");
+        gold = PlayerPrefs.GetInt("PlayerGold");
     }
 
     private void OnEnable()
     {
         firstSelect.interactable = false;
+        Cash(0);
+        Gold(0);
     }
 
     public void SpriteUpdate(Transform _transformPart , Transform _transformSprites)
@@ -64,6 +74,26 @@ public class GarageUI : MonoBehaviour
 
     public void LetsGoButton()
     {
+        GetComponent<AudioSource>().Play();
+        Invoke(nameof(LoadGameScene), 1.5f);
+        //SceneManager.LoadScene(1);
+    }
+    void LoadGameScene()
+    {
         SceneManager.LoadScene(1);
+    }
+
+    public void Cash(int c)
+    {
+        cash += c;
+        cashText.text = cash.ToString();
+        PlayerPrefs.SetInt("PlayerCash" , cash);
+    }
+    
+    public void Gold(int g)
+    {
+        gold += g;
+        goldText.text = gold.ToString();
+        PlayerPrefs.SetInt("PlayerGold" , gold);
     }
 }

@@ -18,11 +18,11 @@ MonoBehaviour:
   itemPrefab: {fileID: 6551160594476470020, guid: 2056ace6afe9343479e7ff862f1fb40d, type: 3}
   carName: sport
   carLevel: 3
-  price: 20000
+  price: 75000
   properties:
-    speed: 180
-    armor: 180
-    fuelTank: 18
-    zombieResist: 18
-    monsterDuration: 1.8
-    comboDuration: 1.8
+    speed: 220
+    armor: 80
+    fuelTank: 45
+    zombieResist: 7.5
+    monsterDuration: 3
+    comboDuration: 2.25

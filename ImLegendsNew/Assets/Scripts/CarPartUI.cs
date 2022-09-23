@@ -61,8 +61,8 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
         }
         else
         {
-            GarageUI.instance.appplyButton.interactable = true;
-            GarageUI.instance.appplyButtonText.text = "Buy";
+            GarageUI.instance.appplyButton.interactable = GarageUI.instance.cash >= carPartData.price;
+            GarageUI.instance.appplyButtonText.text = carPartData.price.ToString();
             GarageUI.instance.appplyButton.onClick.RemoveAllListeners();
             GarageUI.instance.appplyButton.onClick.AddListener(() => BuyEvent());
         }
@@ -90,6 +90,7 @@ public class CarPartUI : MonoBehaviour , ISelectHandler , IDeselectHandler
 
     public void BuyEvent()
     {
+        GarageUI.instance.Cash(-carPartData.price);
         PlayerPrefs.SetInt("_PurchasePart" + carPartData.name + CarSelection.car.carData.name, 1);
         transform.GetChild(0).gameObject.SetActive(false);
         EquipEvent();

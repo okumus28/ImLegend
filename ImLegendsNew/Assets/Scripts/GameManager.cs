@@ -60,6 +60,15 @@ public class GameManager : MonoBehaviour
     public int horizontalInput;
     public bool isBreaking;
 
+    public GameObject comboPanel;
+    public TextMeshProUGUI comboValueText;
+    public Image comboTimeFillBar;
+
+    public TextMeshProUGUI comboEndText;
+    public float comboT;
+    public int comboValue;
+    bool comboControl;
+
     private void Awake()
     {
         instance = this;
@@ -95,6 +104,27 @@ public class GameManager : MonoBehaviour
             //    //timeElapsed /= 1.3f;
             //}
         }
+
+        if (comboPanel.activeSelf)
+        {
+            if (comboT <= properties.comboDuration * 2)
+            {
+                comboValueText.text = (comboValue).ToString();
+                comboTimeFillBar.fillAmount = (properties.comboDuration * 2 - comboT) / properties.comboDuration * 2;
+                comboT += Time.deltaTime / 2;
+                
+            }
+            else
+            {
+                Point(comboValue * 100);
+                comboEndText.text = "+" + (comboValue * comboValue * 100).ToString();
+                comboEndText.gameObject.SetActive(true);
+                comboPanel.SetActive(false);
+                comboValue = 0;
+                comboT = 0;
+                Invoke(nameof(InvokeSetActiveEndText), 2);
+            }
+        }
     }
 
     public void SpeedoMeter(float currentSpeed)
@@ -108,8 +138,8 @@ public class GameManager : MonoBehaviour
             return;
         currentFuel = currentFuel <= 0 ? 0 : currentFuel;
 
-        fuelCursor.localEulerAngles = new Vector3(0, 0, 110 - ((100 - currentFuel) * 2.45f));
-        fuelImage.color = currentFuel < 100 / 5 ? currentFuel < 100 / 10 ? Color.red : Color.yellow : Color.black;
+        fuelCursor.localEulerAngles = new Vector3(0, 0, 110 - ((200 - currentFuel) * 1.275f));
+        fuelImage.color = currentFuel < 200 / 5 ? currentFuel < 200 / 10 ? Color.red : Color.yellow : Color.black;
 
         gameOver = currentFuel <= 0;
         GameOver();
@@ -172,12 +202,13 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         defaultCashText.text = cash.ToString();
 
-        int c = (int)(point * 0.1f) + (killedZombi * 10) + (int)distance / 10;
+        int c = (int)(point * 0.25f) + (killedZombi * 15) + (int)distance / 10;
 
         cash += c;
         cashText.text = c.ToString();
         PlayerPrefs.SetInt("PlayerCash" , cash);
         scoreText.text = point.ToString();
+
         Time.timeScale = 0;
     }
 
@@ -213,5 +244,23 @@ public class GameManager : MonoBehaviour
     public void SetBreakingInput(bool isBreaking)
     {
         this.isBreaking = isBreaking;
+    }
+
+    public void Combo()
+    {
+        //comboControl = true;
+        if (comboT <= properties.comboDuration)
+        {
+            comboPanel.SetActive(true);
+            comboEndText.gameObject.SetActive(false);
+            comboValueText.text = comboValue.ToString();
+            //comboTimeFillBar.fillAmount = comboT / properties.comboDuration;
+            //comboT += Time.deltaTime;
+        }
+    }
+
+    void InvokeSetActiveEndText()
+    {
+        comboEndText.gameObject.SetActive(false);
     }
 }

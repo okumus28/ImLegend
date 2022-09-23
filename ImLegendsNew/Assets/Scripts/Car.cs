@@ -66,29 +66,6 @@ public class Car : MonoBehaviour
             properties = carData.properties.GetValues();
         GetCurrentParts();
     }
-    //private void OnEnable()
-    //{
-    //    purchase = PlayerPrefs.GetInt("_purchase" + carData.name) == 1;
-
-
-    //    if (purchase)
-    //    {
-    //        Debug.Log("purchase ");
-    //        PlayerPrefs.SetInt("CurrentCarIndex", transform.GetSiblingIndex());
-    //    }
-
-    //    garageUI.carsButton.onClick.Invoke();
-
-    //    CarSelectButtonText();
-
-    //    garageUI.carName.text = this.carData.name;
-    //    properties = carData.properties.GetValues();
-
-    //    //uiProperty.UI_PropertiesUpdate(this.properties);
-
-    //    UpdatePartsUIButtons();
-    //    GetCurrentParts();
-    //}
 
     void UpdatePartsUIButtons()
     {
@@ -132,6 +109,9 @@ public class Car : MonoBehaviour
 
             garageUI.carPrice.text = carData.price.ToString();
             garageUI.carSelectButton.gameObject.SetActive(true);
+
+            garageUI.carSelectButton.interactable = garageUI.cash >= carData.price;
+
             garageUI.carSelectButton.onClick.RemoveAllListeners();
             garageUI.carSelectButton.onClick.AddListener(() => CarBuyEvent());
             garageUI.carSelectButtonText.text = "BUY";
@@ -139,6 +119,7 @@ public class Car : MonoBehaviour
     }
     void CarBuyEvent()
     {
+        garageUI.Cash(-carData.price);
         PlayerPrefs.SetInt("_purchase" + carData.name, 1);
         garageUI.carSelectButton.gameObject.SetActive(false);
         garageUI.carLock.gameObject.SetActive(false);
@@ -152,37 +133,4 @@ public class Car : MonoBehaviour
         Debug.Log("car disable " + carData.name);
         properties = carData.properties.GetValues();
     }
-
-    //public void SetIndex(Transform _transform , int index)
-    //{
-    //    if (_transform == fBumperTransform)
-    //    {
-    //        currentFBumper = index;
-    //    }
-    //    if (_transform == bBumperTransform)
-    //    {
-    //        currentBBumper = index;
-    //    }
-    //    if (_transform == sidesTransform)
-    //    {
-    //        currentSides = index;
-    //    }
-    //    if (_transform == windowsTransform)
-    //    {
-    //        currentWindows = index;
-    //    }
-    //    if (_transform == cowlingTransform)
-    //    {
-    //        currentCowling = index;
-    //    }
-    //    if (_transform == rimsTransform)
-    //    {
-    //        currentRims = index;
-    //    }
-
-    //    for (int i = 0; i < _transform.childCount; i++)
-    //    {
-    //        _transform.GetChild(i).gameObject.SetActive(i == index);
-    //    }
-    //}
 }

@@ -3,16 +3,8 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
-public class CarController : MonoBehaviour {
-
-	public enum WheelDrive
-	{
-		frontWD,
-		backWD,
-		fourWD,
-	}
-
-	//public WheelDrive wheelDrive;
+public class CarController : MonoBehaviour 
+{
 	private Rigidbody rb;
 
 	[Header("Wheels")]
@@ -49,10 +41,11 @@ public class CarController : MonoBehaviour {
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody>();
+		
+		GetComponent<CarAnimation>().enabled = SceneManager.GetActiveScene().name != "GameScene";
+		GetComponent<AudioSource>().enabled = SceneManager.GetActiveScene().name != "GameScene";
 
-		GetComponent<AudioSource>().enabled = !(SceneManager.GetActiveScene().name == "GameScene");
-		GetComponent<CarAnimation>().enabled = !(SceneManager.GetActiveScene().name == "GameScene");
-		frontLeftCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
+        frontLeftCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
         frontRightCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
 		backLeftCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
 		backRightCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
@@ -107,15 +100,21 @@ public class CarController : MonoBehaviour {
 
 	void GetInput()
 	{
-		//horizontalInput = Input.GetAxisRaw("Horizontal");
+
+#if UNITY_EDITOR
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+#else
 		horizontalInput = GameManager.instance.horizontalInput;
+#endif
 		horizontalInput *= isBreaking ? -1 : 1;		
 
         transform.rotation = horizontalInput == 0 ? Quaternion.RotateTowards(transform.rotation, new Quaternion(0, 0, 0, 1), 10 * Time.deltaTime) : transform.rotation;
 
-
-		isBreaking = Input.GetKey(KeyCode.Space) && currentSpeed >= 30;
+#if UNITY_EDITOR
+        isBreaking = Input.GetKey(KeyCode.Space) && currentSpeed >= 30;
+#else
 		isBreaking = GameManager.instance.isBreaking && currentSpeed >= 30;
+#endif
     }
     void HandleMotor()
 	{
@@ -161,31 +160,32 @@ public class CarController : MonoBehaviour {
 		frontRightCollider.steerAngle = currentAngle;
 	}
 
-	void OnCollisionStay(Collision other)
+	//void OnCollisionStay(Collision other)
+	//{
+	//	if (other.collider.CompareTag("Obstacle"))
+	//	{
+	//		Debug.Log(other.collider.name);
+	//		Invoke(nameof(ObstacleTrigger), .3f);
+ //       }
+ //   }
+
+	private void OnCollisionEnter(Collision collision)
 	{
-		if (other.collider.CompareTag("Obstacle"))
+		if (collision.collider.CompareTag("Obstacle"))
 		{
-			Debug.Log(other.collider.name);
-			if (currentSpeed <= 5)
-			{
-				currentArmor = 0;
-			}
-			else
-			{
-				currentArmor -= currentSpeed / 4;
-			}
+			currentArmor = 0;
 		}
-    }
+	}
 
 	void ObstacleTrigger()
 	{
-		if (currentSpeed <= 5)
+		if (currentSpeed <= 25)
 		{
 			currentArmor = 0;	
 		}
 		else
 		{
-			currentArmor -= currentSpeed / 4;
+			currentArmor -= currentSpeed / 2;
 		}
 	}
 

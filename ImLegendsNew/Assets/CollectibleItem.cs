@@ -27,7 +27,9 @@ public class CollectibleItem : MonoBehaviour
             if (currentCar.currentArmor > currentCar.maxArmor)
                 currentCar.currentArmor = currentCar.maxArmor;
 
-            Destroy(gameObject);
+            GetComponent<AudioSource>().Play();
+
+            Destroy(gameObject , 1f);
         }
     }
 
