@@ -115,5 +115,5 @@ MonoBehaviour:
   damage: 7
   boundsCollider: {fileID: 0}
   offsetY: 1
-  speed: 0.1
+  speed: 0.05
   zombiExplode: {fileID: 8300000, guid: d52b63d8fa56eb24bb2fa508873ff5de, type: 3}

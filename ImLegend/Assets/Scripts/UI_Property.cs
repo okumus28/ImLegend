@@ -21,6 +21,11 @@ public class UI_Property : MonoBehaviour
     public Image monsterDurationFillBar;
     public Image comboDurationFillBar;
 
+    [Header("Colors")]
+    public Color moreColor;
+    public Color lessColor;
+    public Color normalColor;
+
     public static UI_Property instance { get; private set; }
 
     private void Awake()

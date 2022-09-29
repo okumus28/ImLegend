@@ -1,0 +1,2044 @@
+fileFormatVersion: 2
+guid: 5e09455bcb1969e44b16566dc0496b7e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: deneme 3_0
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 461
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73d9d3b63822b74b96edf0cf7df1b14
+      internalID: -606013078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37a679baea2c6f4595a4eacc4b7a088
+      internalID: 1585780985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db623259b7e1604ca14cd7452adcc7f
+      internalID: 1116349957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 461
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd198247e09eca347b4e3c63f7794e8e
+      internalID: -652811725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_4
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b9c8913491b3e46bb0e605ba30a4f1
+      internalID: -1953391098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831ed016a82dd7147a15bb86c63f2852
+      internalID: 351727813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_6
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 461
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf3afb85d36ae347a85c4ec600b79cc
+      internalID: -545909463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_7
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cb10c4b6ca0f14b90d0ce6e99e5d6a
+      internalID: 500903341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_8
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cef90c4053c774a80a9e1f3b4a5914
+      internalID: 1687362598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_9
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e59dbb456eff944aa64ce7cc10f3bf
+      internalID: -1344968515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_10
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d3e503667ab6b47b5c56f00e1c75c3
+      internalID: -1364599853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_11
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 461
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e1d66e7b0f3a246b29ef81e719b86d
+      internalID: 2035843538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_12
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 386
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a77ad3e84affd4991e0795f392c09f
+      internalID: 1216101551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_13
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 386
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4dbaeaa97ea7342b23502deaa5f805
+      internalID: 473657347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_14
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 386
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6e52cde370511479f7ec304dada1e6
+      internalID: 1919410643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_15
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 386
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4757b7a3344fa4eac22b0259b6db8a
+      internalID: -635286856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_16
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 386
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f416d33ab9fc594aa21c9c00b099e6f
+      internalID: -168182944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_17
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 386
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7102530e1ea8d1f44917885c217c13cb
+      internalID: -1300650932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_18
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 386
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daeb7cc2e68f89945ac8fa3579c38b7d
+      internalID: -2091311407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_19
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 386
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f91c423c60b7234f9e85e0c8fcea296
+      internalID: -360772564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_20
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 386
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bebcd4a1f9d48842822974a7c3b19f1
+      internalID: 957273732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_21
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 386
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75175b88e35830b469a529db69bbd396
+      internalID: 633697549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_22
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 386
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2002da3ec3c93d74a8aeba4324613b00
+      internalID: -1133027242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_23
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 386
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf0401b453c3494088806bd8ec71410
+      internalID: 353686196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_24
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 311
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135fb79228b0b2a4c808386cba53a56e
+      internalID: 82162264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_25
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 311
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021e3d7cb7cd8324092c14b43e18aa77
+      internalID: -1777648736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_26
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 311
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0954955dd7efe9e4896d5d665818a1d4
+      internalID: 940635928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_27
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 311
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe28f6480bf60304d8af88de093c90f2
+      internalID: 930581026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_28
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 311
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbc8a08e2a5d6e4bbae017b885e148d
+      internalID: 1708070025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_29
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 311
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9232600ad93f5499eb5c09b6455dd8
+      internalID: -202821732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_30
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 311
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e1803c3b4513c4eab2e24b58a48366
+      internalID: 1219069783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_31
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 311
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d1172a4c8c31840af744b147352358
+      internalID: -1837887757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_32
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 311
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955d89921f9d83c4d9a1762fe74161f0
+      internalID: 1974250587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_33
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 311
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7468daab9d44c4bb4aa43233e74063
+      internalID: -73860843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_34
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 311
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec6101cf86dd99478e701aca78cafd1
+      internalID: -1860641278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_35
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 311
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b1791b351cbc5042962cec01d10d8fb
+      internalID: 598289902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_39
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 237
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7f2e95084131c4f842c0c3916e7823
+      internalID: -1768383432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_40
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 236
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99dddff534a746044851ee32361cee1a
+      internalID: -1311565791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_43
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 253
+        width: 101
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e8a6f802502544f9650e79457af426
+      internalID: 1694662745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_44
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 257
+        width: 45
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1557ccabbddf91a4bbad4e04c5c53e40
+      internalID: -1691948179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_45
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 234
+        width: 39
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed573e6a9d03b87408d06100536bda80
+      internalID: -1046442686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_46
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 235
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fff6d28e9a8d1b4dbe2130a6430b48e
+      internalID: -1638528960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_48
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 238
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47734daa34035834282f0c3e401e07d8
+      internalID: -1415422815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_49
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 218
+        width: 52
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5536db19445a8409a1857ef76e6115
+      internalID: -152455887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_50
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 219
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d42dc1b7a7792b48929b2ea0ff6ddb8
+      internalID: 426660969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_51
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 217
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605cc665550020f43bb22c701776b0c1
+      internalID: -1019953139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_54
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 238
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a1bbdab8027c54ebd02266a98cad19
+      internalID: 1512078477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_55
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 236
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea5c048e95683a4289044bd89abaccc
+      internalID: 1136727793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_56
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 240
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16073bf4383ee544bbbc9a2de6d820d
+      internalID: -253131599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_59
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 222
+        width: 101
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4094c5074e073b147acf245aaea06482
+      internalID: 64509089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_60
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 208
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde1ac3921af82242983eca31576cf1b
+      internalID: -1121379710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_61
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 185
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae17c1826b1ece4ea9a139b6c0995fd
+      internalID: -570422506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_62
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 186
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832d1ab6db5c7e841bcba113db3eb7ac
+      internalID: -615635347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_64
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 189
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c28e552a1175347bb274925d3af0ec
+      internalID: 1265906719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_65
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 189
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a40bf8b65517b541bd46fa8127e0de3
+      internalID: 742639374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_66
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 189
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659bbf0d4f63d2b42993cb2b2b333fac
+      internalID: 1536917442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_67
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 186
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51872159b32b7bc4a92e3b1e3d673f1f
+      internalID: 439792395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_68
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 192
+        width: 113
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc35934d9bfd75f4ebbf49fbf1c89de6
+      internalID: -279047735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_69
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 199
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e106c2385b22eb4e9615caf3f9c244d
+      internalID: -249271917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_70
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 189
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d915a7e8e8bf01544abf2b20bd4131c9
+      internalID: -968215368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_71
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 174
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9b1222dd4d7ce49beca134982b2630
+      internalID: -1225097573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_72
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 67
+        width: 128
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b51b6ebf0956fe4b95797f98dffc82f
+      internalID: 1368064502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_73
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 195
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0ec08ddda27ab4e88c46aa719af396
+      internalID: -1241831821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_74
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 156
+        width: 88
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5746d6534391140428b475a087a20e33
+      internalID: 1851101535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_75
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 175
+        width: 73
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea4d31b48c835247b27b483d6c4f2dc
+      internalID: 631913679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_76
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 150
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f0c5546d414134ebb1434746534e3a
+      internalID: 1258607149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_77
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 148
+        width: 38
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d75a1e0946f8f469b602d5bee5e471
+      internalID: -2068928545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_78
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 136
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf3e991456b37c4c87a421694ab8fdb
+      internalID: -12816908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_79
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 134
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c9e69d6fbee624c843c3748b73dac7
+      internalID: -920956926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_81
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 132
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea026fcc81a69fd4a953bffd9b021cea
+      internalID: -644861883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_82
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 133
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7156935ebe82a1449b01e5976e1e16bd
+      internalID: -23927613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_83
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 132
+        width: 35
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d86cd33970415b45adbacb1cb0e57dc
+      internalID: 953025332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_85
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 147
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b51250a6420c714e86fa5121a55fd66
+      internalID: 1406266961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_88
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 122
+        width: 95
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a6d4124dca33044b5444336796517d
+      internalID: 1506710424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_90
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 112
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639ef85918405ea4dab9dffe531fc554
+      internalID: 624168371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_91
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 110
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06dcfd8129f7644ca8be0675bef9780
+      internalID: -1761754617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_92
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 76
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d6ad71c6e37264b9adb15e5f1963cf
+      internalID: 1408122487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_93
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 76
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75aae480eb56f954680825654b07a407
+      internalID: -693341601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_94
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 82
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83f60c79db3caf469ac5b2f74c4e56f
+      internalID: 176418422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_95
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 80
+        width: 37
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069a7ffdf53b7664b8074016cd44c9d9
+      internalID: 1456200580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_96
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 77
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f705227bd33c534448f2468709e7af8b
+      internalID: -1469085990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_97
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 84
+        width: 112
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5adfaa65e3a19d4cadd9d851b6dfc26
+      internalID: 1778235636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_98
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 78
+        width: 88
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9635b1f5a3b8d8f45ab4a5d18f1dfe23
+      internalID: 593962422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_99
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 74
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d9dec3fd6d1534c9219e83b61fcf6e
+      internalID: 1500259741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deneme 3_100
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 74
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8217d051c4873f54797f114352c9957f
+      internalID: 1745946402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1697bf282d2ea754899b41fda5b72fbe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      deneme 3_43: 1694662745
+      deneme 3_95: 1456200580
+      deneme 3_91: -1761754617
+      deneme 3_68: -279047735
+      deneme 3_77: -2068928545
+      deneme 3_1: 1585780985
+      deneme 3_82: -23927613
+      deneme 3_25: -1777648736
+      deneme 3_4: -1953391098
+      deneme 3_32: 1974250587
+      deneme 3_54: 1512078477
+      deneme 3_62: -615635347
+      deneme 3_52: 216282701
+      deneme 3_12: 1216101551
+      deneme 3_90: 624168371
+      deneme 3_9: -1344968515
+      deneme 3_15: -635286856
+      deneme 3_67: 439792395
+      deneme 3_27: 930581026
+      deneme 3_80: -654109395
+      deneme 3_84: -1186336009
+      deneme 3_78: -12816908
+      deneme 3_40: -1311565791
+      deneme 3_94: 176418422
+      deneme 3_24: 82162264
+      deneme 3_87: -802434952
+      deneme 3_46: -1638528960
+      deneme 3_89: 731782285
+      deneme 3_53: -1576820721
+      deneme 3_30: 1219069783
+      deneme 3_64: 1265906719
+      deneme 3_59: 64509089
+      deneme 3_19: -360772564
+      deneme 3_14: 1919410643
+      deneme 3_81: -644861883
+      deneme 3_96: -1469085990
+      deneme 3_45: -1046442686
+      deneme 3_47: -458590717
+      deneme 3_31: -1837887757
+      deneme 3_36: 620495878
+      deneme 3_34: -1860641278
+      deneme 3_28: 1708070025
+      deneme 3_42: -127034095
+      deneme 3_61: -570422506
+      deneme 3_92: 1408122487
+      deneme 3_97: 1778235636
+      deneme 3_74: 1851101535
+      deneme 3_65: 742639374
+      deneme 3_75: 631913679
+      deneme 3_66: 1536917442
+      deneme 3_48: -1415422815
+      deneme 3_86: 703407582
+      deneme 3_69: -249271917
+      deneme 3_93: -693341601
+      deneme 3_39: -1768383432
+      deneme 3_58: 310173207
+      deneme 3_76: 1258607149
+      deneme 3_71: -1225097573
+      deneme 3_20: 957273732
+      deneme 3_98: 593962422
+      deneme 3_100: 1745946402
+      deneme 3_8: 1687362598
+      deneme 3_63: -1945319805
+      deneme 3_35: 598289902
+      deneme 3_72: 1368064502
+      deneme 3_99: 1500259741
+      deneme 3_29: -202821732
+      deneme 3_85: 1406266961
+      deneme 3_44: -1691948179
+      deneme 3_57: 497884659
+      deneme 3_60: -1121379710
+      deneme 3_2: 1116349957
+      deneme 3_3: -652811725
+      deneme 3_17: -1300650932
+      deneme 3_50: 426660969
+      deneme 3_16: -168182944
+      deneme 3_70: -968215368
+      deneme 3_38: 487158792
+      deneme 3_79: -920956926
+      deneme 3_83: 953025332
+      deneme 3_56: -253131599
+      deneme 3_41: 1484093119
+      deneme 3_11: 2035843538
+      deneme 3_6: -545909463
+      deneme 3_55: 1136727793
+      deneme 3_0: -606013078
+      deneme 3_5: 351727813
+      deneme 3_7: 500903341
+      deneme 3_33: -73860843
+      deneme 3_23: 353686196
+      deneme 3_37: 820246954
+      deneme 3_18: -2091311407
+      deneme 3_13: 473657347
+      deneme 3_21: 633697549
+      deneme 3_10: -1364599853
+      deneme 3_73: -1241831821
+      deneme 3_22: -1133027242
+      deneme 3_49: -152455887
+      deneme 3_51: -1019953139
+      deneme 3_26: 940635928
+      deneme 3_88: 1506710424
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
