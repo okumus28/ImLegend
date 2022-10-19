@@ -13,7 +13,12 @@ public class CarController : MonoBehaviour
 	[SerializeField] private WheelCollider backRightCollider;
 	[SerializeField] private WheelCollider backLeftCollider;
 
-	[Header("Vehicle")]
+    [SerializeField] private Transform frontRightTransform;
+    [SerializeField] private Transform frontLeftTransform;
+    [SerializeField] private Transform backRightTransform;
+    [SerializeField] private Transform backLeftTransform;
+
+    [Header("Vehicle")]
 	[SerializeField] private float motorForce;
 	private float currentMotorForce;
 	[SerializeField] private float breakForce;
@@ -22,7 +27,7 @@ public class CarController : MonoBehaviour
 
 	[Header("Properties")]
 
-	[SerializeField]private float maxSpeed;
+	public float maxSpeed;
 	public float currentSpeed;
 
 	[System.NonSerialized] public float maxArmor;
@@ -30,10 +35,6 @@ public class CarController : MonoBehaviour
 
     [System.NonSerialized] public float maxFuel;
 	public float currentFuel;
-
-	//private WheelCollider[] wheels;
-
-	// inputs
 
 	private float horizontalInput;
 	[SerializeField]private bool isBreaking;
@@ -51,7 +52,6 @@ public class CarController : MonoBehaviour
 		backRightCollider.enabled = SceneManager.GetActiveScene().name == "GameScene";
         enabled = SceneManager.GetActiveScene().name == "GameScene";
     }
-	// here we find all the WheelColliders down in the hierarchy
 	public void Start()
 	{
 		//wheels = GetComponentsInChildren<WheelCollider>();
@@ -69,7 +69,6 @@ public class CarController : MonoBehaviour
 		//Start speed -- maxspeed / 2
 		rb.velocity = new Vector3(0, 0, maxSpeed / 7.2f);
 	}
-
 	public void Update()
 	{
 		ApplyBrake();
@@ -80,10 +79,10 @@ public class CarController : MonoBehaviour
 
 		GetInput();
 		HandleMotor();
-		SteeringAngle();
+		//SteeringAngle();
+		LeftRightMove();
 		DashBoard();
 	}
-
 	void DashBoard()
 	{
         currentSpeed = rb.velocity.magnitude * 3.6f;
@@ -97,7 +96,6 @@ public class CarController : MonoBehaviour
         GameManager.instance.SpeedoMeter(currentSpeed);
         //GameManager.instance.MonsterMode(killedZombi);
     }
-
 	void GetInput()
 	{
 
@@ -106,20 +104,20 @@ public class CarController : MonoBehaviour
 #else
 		horizontalInput = GameManager.instance.horizontalInput;
 #endif
-		horizontalInput *= isBreaking ? -1 : 1;		
+		//horizontalInput *= isBreaking ? -1 : 1;		
 
         transform.rotation = horizontalInput == 0 ? Quaternion.RotateTowards(transform.rotation, new Quaternion(0, 0, 0, 1), 10 * Time.deltaTime) : transform.rotation;
-
+		
 #if UNITY_EDITOR || PLATFORM_WEBGL
         isBreaking = Input.GetKey(KeyCode.Space) && currentSpeed >= 30;
 #else
 		isBreaking = GameManager.instance.isBreaking && currentSpeed >= 30;
 #endif
     }
-    void HandleMotor()
+	void HandleMotor()
 	{
 		currentMotorForce = currentSpeed >= maxSpeed ? 0 : motorForce;
-		//currentMotorForce = motorForce;
+
 
 		if (currentArmor <= 0 || currentFuel <= 0)
 		{
@@ -135,23 +133,28 @@ public class CarController : MonoBehaviour
 		//currentArmor -= Time.fixedDeltaTime;
 		currentFuel -= Time.fixedDeltaTime / 1.5f;
 
+		frontLeftTransform.Rotate(currentSpeed * 100 * Time.deltaTime, frontLeftTransform.localEulerAngles.y, 0, Space.Self);
+		frontRightTransform.Rotate(currentSpeed * 100 * Time.deltaTime , frontRightTransform.localEulerAngles.y, 0 , Space.Self);
+		backLeftTransform.Rotate(currentSpeed * 100 * Time.deltaTime , 0 , 0 , Space.Self);
+		backRightTransform.Rotate(currentSpeed * 100 * Time.deltaTime , 0 , 0 , Space.Self);
 
 		backRightCollider.motorTorque = currentMotorForce;
 		backLeftCollider.motorTorque = currentMotorForce;
 	}
-
 	void ApplyBrake()
 	{
-		currentBreakForce = isBreaking ? breakForce : 0;
+		//currentBreakForce = isBreaking ? breakForce : 0;
 
+		if (isBreaking)
+		{
+			rb.velocity *= .975f;
+		}
 
-		frontLeftCollider.brakeTorque = currentBreakForce;
-		frontRightCollider.brakeTorque = currentBreakForce;
-		backLeftCollider.brakeTorque = currentBreakForce;
-		backRightCollider.brakeTorque = currentBreakForce;
+		//frontLeftCollider.brakeTorque = currentBreakForce;
+		//frontRightCollider.brakeTorque = currentBreakForce;
+		//backLeftCollider.brakeTorque = currentBreakForce;
+		//backRightCollider.brakeTorque = currentBreakForce;
 	}
-
-
 	void SteeringAngle()
 	{
 		float currentAngle = horizontalInput * maxSteerAngle;
@@ -159,16 +162,23 @@ public class CarController : MonoBehaviour
 		frontLeftCollider.steerAngle = currentAngle;
 		frontRightCollider.steerAngle = currentAngle;
 	}
+	void LeftRightMove()
+	{
+		transform.Rotate(Vector3.up * horizontalInput * maxSteerAngle * Time.deltaTime);
 
-	//void OnCollisionStay(Collision other)
-	//{
-	//	if (other.collider.CompareTag("Obstacle"))
-	//	{
-	//		Debug.Log(other.collider.name);
-	//		Invoke(nameof(ObstacleTrigger), .3f);
- //       }
- //   }
+  //      frontLeftTransform.Rotate(Vector3.up * horizontalInput * maxSteerAngle * Time.deltaTime);
+		//frontRightTransform.Rotate(Vector3.up * horizontalInput * maxSteerAngle * Time.deltaTime);
 
+		Vector3 playerEulerAngles = transform.rotation.eulerAngles;
+
+		playerEulerAngles.y = (playerEulerAngles.y > 180) ? playerEulerAngles.y - 360 : playerEulerAngles.y;
+		playerEulerAngles.y = Mathf.Clamp(playerEulerAngles.y , -30 , 30);
+
+		transform.rotation = Quaternion.Euler(playerEulerAngles);
+
+		frontLeftTransform.localEulerAngles = new Vector3(frontLeftTransform.localEulerAngles.x,Input.GetAxis("Horizontal") * maxSteerAngle,0);
+		frontRightTransform.localEulerAngles = new Vector3(frontRightTransform.localEulerAngles.x, Input.GetAxis("Horizontal") * maxSteerAngle,0);
+	}
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (collision.collider.CompareTag("Obstacle"))
@@ -176,7 +186,6 @@ public class CarController : MonoBehaviour
 			currentArmor = 0;
 		}
 	}
-
 	void ObstacleTrigger()
 	{
 		if (currentSpeed <= 25)
@@ -188,7 +197,6 @@ public class CarController : MonoBehaviour
 			currentArmor -= currentSpeed / 2;
 		}
 	}
-
 	void OnTriggerEnter(Collider other)
 	{
         if (other.CompareTag("RoadTag"))
@@ -201,7 +209,6 @@ public class CarController : MonoBehaviour
 			Destroy(other.gameObject);
 		}
 	}
-
 	public IEnumerator	MMM()
 	{
 		transform.tag = "Monster";
@@ -210,11 +217,7 @@ public class CarController : MonoBehaviour
 		rb.velocity = new Vector3(0, 0, maxSpeed / 2f);
 		maxSpeed *= 2;
 
-		print("basladı");
-
 		yield return new WaitForSeconds(GameManager.instance.properties.monsterDuration);
-
-        print("bitti");
 
         transform.tag = "Car";
 		GameManager.instance.monsterMode = false;

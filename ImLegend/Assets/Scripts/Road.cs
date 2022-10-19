@@ -33,7 +33,7 @@ public class Road : MonoBehaviour
     {
         for (int i = 0; obstacles.Length > 0 && i < Random.Range(0, 2); i++) 
         {
-            Instantiate(obstacles[Random.Range(0, obstacles.Length)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.identity, transform);
+            Instantiate(obstacles[Random.Range(0, obstacles.Length)], RandomizePosition(spawnBounds.GetChild(index), 0), Quaternion.Euler(0, Random.Range(0, 360), 0), transform);
         }
     }
 

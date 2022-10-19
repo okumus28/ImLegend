@@ -1991,7 +1991,7 @@ GameObject:
   - component: {fileID: -2638199091604385797}
   m_Layer: 0
   m_Name: TZ_Tank_04_infected
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2071,11 +2071,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8a2ae20c6997446bf332fd7ce18a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healt: 50
   blood: 5
   damage: 10
   boundsCollider: {fileID: 0}
   offsetY: 1
-  speed: 0.05
+  speed: 0.01
   zombiExplode: {fileID: 8300000, guid: d52b63d8fa56eb24bb2fa508873ff5de, type: 3}
 --- !u!1 &194272
 GameObject:

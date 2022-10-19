@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour
         currentCar = carHolder.GetChild(PlayerPrefs.GetInt("CurrentCarIndex")).GetComponent<Car>();
         cash = PlayerPrefs.GetInt("PlayerCash");
     }
-
     private void Start()
     {
         properties = currentCar.properties;
@@ -85,7 +84,6 @@ public class GameManager : MonoBehaviour
         Point(0);
         MonsterModeMeter(0);        
     }
-
     private void Update()
     {
         if (monsterMode)
@@ -128,7 +126,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     public void SpeedoMeter(float currentSpeed)
     {
         speedCursor.localEulerAngles = new Vector3(0, 0, 270 - (currentSpeed * 0.9f));
@@ -162,7 +159,6 @@ public class GameManager : MonoBehaviour
         GameOver();
         
     }
-
     public void DistanceCal(float zPosition)
     {
         Point((zPosition - distance) < 0.5f ? 0 : 1);
@@ -171,7 +167,6 @@ public class GameManager : MonoBehaviour
 
         distanceText.text = (distance / 1000).ToString("f2") + " km";
     }
-
     public void MonsterModeMeter(float b)
     {
         this.blood += b;
@@ -183,20 +178,17 @@ public class GameManager : MonoBehaviour
         monsterMeter3.fillAmount = (float)blood / 100;
 
     }
-
     public void KilledZombi(int k)
     {
         killedZombi += k;
         killedZombiText.text = killedZombi.ToString();
         //Point(5);
     }
-
     public void Point(int earned)
     {
         point += earned;
         pointText.text = point.ToString();
     }
-
     public void GameOver()
     {
         if (!gameOver)
@@ -215,18 +207,15 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0;
     }
-
     public void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
         Time.timeScale = 1;
     }
-
     public void SettingsButton()
     {
         Debug.Log("SETTÝNGS ON");
     }
-
     public void MonsterModeSTartButton()
     {
         if (blood >= 100)
@@ -239,17 +228,14 @@ public class GameManager : MonoBehaviour
             monsterModeStartButton.GetComponent<Button>().enabled = false;
         }
     }
-
     public void SetHorizontalInput(int axis)
     {
         horizontalInput = axis;
     }
-
     public void SetBreakingInput(bool isBreaking)
     {
         this.isBreaking = isBreaking;
     }
-
     public void Combo()
     {
         //comboControl = true;
@@ -262,7 +248,6 @@ public class GameManager : MonoBehaviour
             //comboT += Time.deltaTime;
         }
     }
-
     void InvokeSetActiveEndText()
     {
         comboEndText.gameObject.SetActive(false);

@@ -72,7 +72,6 @@ public class Car : MonoBehaviour
             properties = carData.properties.GetValues();
         GetCurrentParts();
     }
-
     void UpdatePartsUIButtons()
     {
         garageUI.SpriteUpdate(fBumperTransform, garageUI.fbbSprite);
@@ -82,7 +81,6 @@ public class Car : MonoBehaviour
         garageUI.SpriteUpdate(cowlingTransform, garageUI.cowlingsSprite);
         garageUI.SpriteUpdate(rimsTransform, garageUI.rimsSprite);
     }
-
     public void GetCurrentParts()
     {
         currentFBumper = PlayerPrefs.GetInt("Current" + fBumperTransform + carData.name);
@@ -99,7 +97,6 @@ public class Car : MonoBehaviour
         cowlingTransform.GetChild(currentCowling).gameObject.SetActive(true);
         rimsTransform.GetChild(currentRims).gameObject.SetActive(true);
     }
-
     public void CarSelectButtonText()
     {
         if (purchase)
@@ -132,10 +129,9 @@ public class Car : MonoBehaviour
         garageUI.carSelectButton.gameObject.SetActive(false);
         garageUI.carLock.gameObject.SetActive(false);
         garageUI.garageButton.interactable = true;
+        garageUI.letsGo.interactable = true;
         PlayerPrefs.SetInt("CurrentCarIndex", transform.GetSiblingIndex());
     }
-
-
     private void OnDisable()
     {
         Debug.Log("car disable " + carData.name);

@@ -1011,8 +1011,6 @@ MonoBehaviour:
   currentArmor: 0
   currentFuel: 0
   isBreaking: 0
-  carDrive: {fileID: 8300000, guid: 5037c51da4f58c04c90084daf240eea6, type: 3}
-  swooshin: {fileID: 8300000, guid: 2ce51fe68331c2f4582db0bae6a33052, type: 3}
 --- !u!114 &5104459582309947166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8186,7 +8184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab9a024846c1bc4f81f45028d1c2b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPartData: {fileID: 11400000, guid: f3baf717f1e669f4b972fd8b7709ef66, type: 2}
+  carPartData: {fileID: 11400000, guid: 6685cf5e768c64c479c742c6c31d3321, type: 2}
 --- !u!1 &8815147306637690022
 GameObject:
   m_ObjectHideFlags: 0

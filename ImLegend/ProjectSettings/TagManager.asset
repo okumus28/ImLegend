@@ -8,6 +8,8 @@ TagManager:
   - Car
   - Obstacle
   - Monster
+  - GunFireArea
+  - Zombie
   layers:
   - Default
   - TransparentFX

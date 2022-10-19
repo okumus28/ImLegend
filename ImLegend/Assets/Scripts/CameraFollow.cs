@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour
     public float cameraDelay = 0.02f;
 
     [SerializeField]Vector3 offset;
-
+    
     private void Start()
     {
         //target = PlayerBase.GetComponent<PlayerBase>().vehicleController.transform;
@@ -26,6 +26,19 @@ public class CameraFollow : MonoBehaviour
             transform.position += Vector3.forward / 15;
             return;
         }
+
+        float currentSpeed = target.GetComponent<CarController>().currentSpeed;
+        float maxSpeed = target.GetComponent<CarController>().maxSpeed;
+
+        float a = currentSpeed / maxSpeed;
+
+        Vector3 rot = new Vector3(35 - (a * 7.5f), 0, 0);
+        //rot = rot - new Vector3(a * 7.5f, 0, 0);
+
+
+
+        transform.rotation = Quaternion.Euler(rot);
+
         Vector3 followPos = target.GetChild(0).position - target.GetChild(0).forward * trailDistance;
 
         followPos.y += heightOffset;

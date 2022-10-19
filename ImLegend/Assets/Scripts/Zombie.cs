@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
+    [SerializeField] int healt;
     [SerializeField] float blood;
     [SerializeField] float damage;
     Vector3 target;
@@ -24,7 +25,7 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, speed);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.x, 0, target.z), speed);
         transform.LookAt(target);
         if (Vector3.Distance(transform.position , target) <= 2f)
         {
@@ -43,7 +44,6 @@ public class Zombie : MonoBehaviour
             other.GetComponent<CarController>().currentArmor -= Random.Range(damage - 3, damage + 3);
             if (other.GetComponent<CarController>().currentSpeed >= 50)
             {
-                GameManager.instance.comboT = 0;
                 ComboStart();
             }
             Destroy(gameObject);
@@ -53,7 +53,31 @@ public class Zombie : MonoBehaviour
         {
             AudioController.instance.PlayAudio(zombiExplode);
             GameManager.instance.KilledZombi(1);
+            if (other.GetComponent<CarController>().currentSpeed >= 50)
+            {
+                ComboStart();
+            }
             Destroy(gameObject);
+        }
+
+        if (other.CompareTag("GunFireArea"))
+        {
+            GunController.Instance.zombies.Add(this);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("GunFireArea"))
+        {
+            GunController.Instance.zombies.Remove(this);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (GunController.Instance.zombies.Contains(this))
+        {
+            GunController.Instance.zombies.Remove(this);
         }
     }
 
@@ -69,7 +93,21 @@ public class Zombie : MonoBehaviour
 
     void ComboStart()
     {
+        GameManager.instance.comboT = 0;
         GameManager.instance.comboValue++;
         GameManager.instance.Combo();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log(healt);
+        healt -= damage;
+        if (healt <= 0)
+        {
+            AudioController.instance.PlayAudio(zombiExplode);
+            GameManager.instance.KilledZombi(1);
+            ComboStart();
+            Destroy(this.gameObject);
+        }
     }
 }
