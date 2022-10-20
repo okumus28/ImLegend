@@ -106,7 +106,7 @@ public class Zombie : MonoBehaviour
         {
             AudioController.instance.PlayAudio(zombiExplode);
             GameManager.instance.KilledZombi(1);
-            ComboStart();
+            //ComboStart();
             Destroy(this.gameObject);
         }
     }

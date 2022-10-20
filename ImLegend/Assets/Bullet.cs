@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     {
         if (target == null) Destroy(this.gameObject);
         else
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x , target.position.y + 2.25f, target.position.z), 100 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x , target.position.y + 2.25f, target.position.z), 200 * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
